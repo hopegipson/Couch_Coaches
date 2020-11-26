@@ -6,8 +6,11 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<% if @response %>
+<% if @player %>
   <div>
-    <%= @response.body %>
+    <%= @player.name %>
+    <%= @player.team %>
+    <%= @player.projected_points %>
+
   </div>
 <% end %>

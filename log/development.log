@@ -200,3 +200,685 @@ Processing by SearchController#index as HTML
 Completed 200 OK in 7658ms (Views: 62.1ms | ActiveRecord: 0.0ms | Allocations: 7536)
 
 
+Started GET "/search" for ::1 at 2020-11-26 01:12:27 -0600
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.4) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.4) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20201126045844)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "username" varchar, "admin" boolean DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201126045844"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlayers (20201126053317)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "players" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "position" varchar, "team" varchar, "projected_points" integer, "team_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201126053317"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeams (20201126053833)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "teams" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201126053833"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-11-26 07:12:48.238274"], ["updated_at", "2020-11-26 07:12:48.238274"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/search" for ::1 at 2020-11-26 01:13:01 -0600
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 544)
+Completed 200 OK in 74ms (Views: 67.3ms | ActiveRecord: 0.0ms | Allocations: 17594)
+
+
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:13:03 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 540)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/services/sports_data.rb:4:in `+'
+app/services/sports_data.rb:4:in `by_player'
+app/controllers/search_controller.rb:4:in `index'
+Started GET "/search" for ::1 at 2020-11-26 01:13:56 -0600
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 157)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2191)
+
+
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:13:59 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 413)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/services/sports_data.rb:4:in `+'
+app/services/sports_data.rb:4:in `by_player'
+app/controllers/search_controller.rb:4:in `index'
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:15:24 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+Started GET "/search" for ::1 at 2020-11-26 01:15:27 -0600
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 47.7ms | Allocations: 159)
+Completed 200 OK in 6899ms (Views: 57.3ms | ActiveRecord: 0.0ms | Allocations: 9805)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/search" for ::1 at 2020-11-26 01:15:31 -0600
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 157)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 152)
+Completed 200 OK in 6ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 4910)
+
+
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3801)
+
+
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:15:33 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 46.0ms | Allocations: 152)
+Completed 200 OK in 7132ms (Views: 98.1ms | ActiveRecord: 0.0ms | Allocations: 7826)
+
+
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:16:14 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 518)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/services/sports_data.rb:4:in `+'
+app/services/sports_data.rb:4:in `by_player'
+app/controllers/search_controller.rb:4:in `index'
+Started GET "/search" for ::1 at 2020-11-26 01:17:25 -0600
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 544)
+Completed 200 OK in 45ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 6389)
+
+
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:17:28 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 48.6ms | Allocations: 158)
+Completed 200 OK in 8187ms (Views: 57.1ms | ActiveRecord: 0.0ms | Allocations: 9088)
+
+
+Started GET "/search" for ::1 at 2020-11-26 01:22:31 -0600
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 544)
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 6255)
+
+
+Started GET "/search?player_name=Lamar+Jackson&commit=Search" for ::1 at 2020-11-26 01:22:36 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"Lamar Jackson", "commit"=>"Search"}
+Started GET "/search?player_name=Lamar+Jackson&commit=Search" for ::1 at 2020-11-26 01:22:37 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"Lamar Jackson", "commit"=>"Search"}
+Completed 500 Internal Server Error in 10433ms (ActiveRecord: 0.0ms | Allocations: 15270)
+
+
+  
+NoMethodError (undefined method `lookforexactmatchinresults' for SportsData::Search:Class):
+  
+app/services/sports_data.rb:6:in `by_player'
+app/controllers/search_controller.rb:4:in `index'
+Completed 500 Internal Server Error in 11376ms (ActiveRecord: 0.0ms | Allocations: 168994)
+
+
+  
+NoMethodError (undefined method `lookforexactmatchinresults' for SportsData::Search:Class):
+  
+app/services/sports_data.rb:6:in `by_player'
+app/controllers/search_controller.rb:4:in `index'
+Started GET "/search?player_name=Lamar+Jackson&commit=Search" for ::1 at 2020-11-26 01:23:06 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"Lamar Jackson", "commit"=>"Search"}
+Completed 500 Internal Server Error in 8804ms (ActiveRecord: 0.0ms | Allocations: 9696)
+
+
+  
+NoMethodError (undefined method `lookforexactmatchinresults' for SportsData::Search:Class):
+  
+app/services/sports_data.rb:14:in `by_player'
+app/controllers/search_controller.rb:4:in `index'
+Started GET "/search?player_name=Lamar+Jackson&commit=Search" for ::1 at 2020-11-26 01:24:03 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"Lamar Jackson", "commit"=>"Search"}
+Completed 500 Internal Server Error in 10710ms (ActiveRecord: 0.0ms | Allocations: 6730)
+
+
+  
+NoMethodError (undefined method `detect' for #<Faraday::Response:0x00007ff1e15a72d0>):
+  
+app/services/sports_data.rb:9:in `by_player'
+app/controllers/search_controller.rb:4:in `index'
+Started PUT "/__web_console/repl_sessions/5e9d6d219c0e4c8865b9036c5b0cf51e" for ::1 at 2020-11-26 01:30:15 -0600
+Started PUT "/__web_console/repl_sessions/5e9d6d219c0e4c8865b9036c5b0cf51e" for ::1 at 2020-11-26 01:30:18 -0600
+Started GET "/search" for ::1 at 2020-11-26 01:33:03 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 157)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2380)
+
+
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:33:32 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 152)
+Completed 200 OK in 8726ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 325120)
+
+
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:34:16 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 272.2ms | Allocations: 591613)
+Completed 500 Internal Server Error in 6679ms (ActiveRecord: 0.0ms | Allocations: 908080)
+
+
+  
+ActionView::Template::Error (undefined method `body' for #<Array:0x00007ff1e6191f10>):
+     8: 
+     9: <% if @response %>
+    10:   <div>
+    11:     <%= @response.body %>
+    12:   </div>
+    13: <% end %>
+  
+app/views/search/index.html.erb:11
+Started PUT "/__web_console/repl_sessions/92b8dc530bd73928c2c1faf15feb0b52" for ::1 at 2020-11-26 01:34:57 -0600
+Started PUT "/__web_console/repl_sessions/92b8dc530bd73928c2c1faf15feb0b52" for ::1 at 2020-11-26 01:34:58 -0600
+Started GET "/search?player_name=lamar&commit=Search" for ::1 at 2020-11-26 01:35:33 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"lamar", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 47.9ms | Allocations: 158)
+Completed 200 OK in 8473ms (Views: 69.6ms | ActiveRecord: 0.0ms | Allocations: 8098)
+
+
+Started GET "/search?player_name=Lamar+Jackson&commit=Search" for ::1 at 2020-11-26 01:37:56 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"Lamar Jackson", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 344.2ms | Allocations: 590203)
+Completed 200 OK in 5893ms (Views: 369.0ms | ActiveRecord: 0.0ms | Allocations: 909093)
+
+
+Started GET "/search?player_name=Lamar+Jackson&commit=Search" for ::1 at 2020-11-26 01:38:51 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"Lamar Jackson", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 439)
+Completed 200 OK in 10527ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 319222)
+
+
+Started GET "/search" for ::1 at 2020-11-26 01:41:24 -0600
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 544)
+Completed 200 OK in 41ms (Views: 30.6ms | ActiveRecord: 0.0ms | Allocations: 6324)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 01:41:28 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 439)
+Completed 200 OK in 5530ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 318937)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:14:28 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/MODULE 3/fantasy_football/app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input
+app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input
+app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:14:37 -0600
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/MODULE 3/fantasy_football/app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input
+app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input
+app/controllers/search_controller.rb:14: syntax error, unexpected end, expecting end-of-input
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:15:03 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 159)
+Completed 200 OK in 10092ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 321633)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:15:46 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+Completed 500 Internal Server Error in 13139ms (ActiveRecord: 0.0ms | Allocations: 316784)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/search_controller.rb:9:in `[]'
+app/controllers/search_controller.rb:9:in `index'
+Started PUT "/__web_console/repl_sessions/820e9b4aeb106fa2efee37f0359f190b" for ::1 at 2020-11-26 02:16:06 -0600
+Started PUT "/__web_console/repl_sessions/820e9b4aeb106fa2efee37f0359f190b" for ::1 at 2020-11-26 02:16:07 -0600
+Started PUT "/__web_console/repl_sessions/820e9b4aeb106fa2efee37f0359f190b" for ::1 at 2020-11-26 02:16:13 -0600
+Started PUT "/__web_console/repl_sessions/820e9b4aeb106fa2efee37f0359f190b" for ::1 at 2020-11-26 02:16:13 -0600
+Started PUT "/__web_console/repl_sessions/820e9b4aeb106fa2efee37f0359f190b" for ::1 at 2020-11-26 02:16:16 -0600
+Started PUT "/__web_console/repl_sessions/820e9b4aeb106fa2efee37f0359f190b" for ::1 at 2020-11-26 02:16:21 -0600
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:27:41 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:27:56 -0600
+Completed 500 Internal Server Error in 17612ms (ActiveRecord: 0.0ms | Allocations: 320307)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/search_controller.rb:11:in `[]'
+app/controllers/search_controller.rb:11:in `index'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 159)
+Completed 200 OK in 12677ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 318394)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:28:28 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 158)
+Completed 200 OK in 6458ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 318725)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:31:11 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/MODULE 3/fantasy_football/app/controllers/search_controller.rb:19: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/search_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+app/controllers/search_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+app/controllers/search_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:31:38 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 3794)
+
+
+  
+NoMethodError (undefined method `find_or_create_from_api' for #<Class:0x00007fc005205c70>
+Did you mean?  find_or_create_by):
+  
+app/controllers/search_controller.rb:5:in `index'
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:32:25 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:18:in `find_or_create_from_api'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.7ms | Allocations: 5282)
+
+
+  
+NoMethodError (undefined method `create_from_api' for #<Class:0x00007fc01fc45838>
+Did you mean?  create_or_find_by):
+  
+app/models/player.rb:18:in `find_or_create_from_api'
+app/controllers/search_controller.rb:5:in `index'
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:32:38 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms | Allocations: 5203)
+
+
+  
+NameError (undefined local variable or method `player_name' for #<Class:0x00007fc016b47200>):
+  
+app/models/player.rb:8:in `create_from_api'
+app/models/player.rb:18:in `find_or_create_from_api'
+app/controllers/search_controller.rb:5:in `index'
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:32:56 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms | Allocations: 4056)
+
+
+  
+NameError (undefined local variable or method `player_name' for #<Class:0x00007fc016b47200>):
+  
+app/models/player.rb:8:in `create_from_api'
+app/models/player.rb:18:in `find_or_create_from_api'
+app/controllers/search_controller.rb:5:in `index'
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:33:08 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:33:10 -0600
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[36mPlayer Create (2.4ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-11-26 08:33:16.564395"], ["updated_at", "2020-11-26 08:33:16.564395"]]
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1585)
+Completed 500 Internal Server Error in 8468ms (ActiveRecord: 3.8ms | Allocations: 329732)
+
+
+  
+ActionView::Template::Error (undefined method `name' for true:TrueClass):
+     8: 
+     9: <% if @player %>
+    10:   <div>
+    11:     <%= @player.name %>
+    12:     <%= @player.team %>
+    13:     <%= @player.projected_points %>
+    14: 
+  
+app/views/search/index.html.erb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[36mPlayer Create (0.2ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-11-26 08:33:24.713485"], ["updated_at", "2020-11-26 08:33:24.713485"]]
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1375)
+Completed 500 Internal Server Error in 7851ms (ActiveRecord: 1.8ms | Allocations: 330472)
+
+
+  
+ActionView::Template::Error (undefined method `name' for true:TrueClass):
+     8: 
+     9: <% if @player %>
+    10:   <div>
+    11:     <%= @player.name %>
+    12:     <%= @player.team %>
+    13:     <%= @player.projected_points %>
+    14: 
+  
+app/views/search/index.html.erb:11
+Started PUT "/__web_console/repl_sessions/e30cb6cbbdf3b8b7d0841f4ac1d06165" for ::1 at 2020-11-26 02:33:44 -0600
+Started PUT "/__web_console/repl_sessions/e30cb6cbbdf3b8b7d0841f4ac1d06165" for ::1 at 2020-11-26 02:33:45 -0600
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:34:17 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[36mPlayer Create (0.4ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-11-26 08:34:29.347549"], ["updated_at", "2020-11-26 08:34:29.347549"]]
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1368)
+Completed 500 Internal Server Error in 12038ms (ActiveRecord: 1.7ms | Allocations: 324347)
+
+
+  
+ActionView::Template::Error (undefined method `name' for true:TrueClass):
+     8: 
+     9: <% if @player %>
+    10:   <div>
+    11:     <%= @player.name %>
+    12:     <%= @player.team %>
+    13:     <%= @player.projected_points %>
+    14: 
+  
+app/views/search/index.html.erb:11
+Started PUT "/__web_console/repl_sessions/94401f93e19bb722790f472235c656a6" for ::1 at 2020-11-26 02:34:35 -0600
+Started PUT "/__web_console/repl_sessions/94401f93e19bb722790f472235c656a6" for ::1 at 2020-11-26 02:34:38 -0600
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:35:37 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-11-26 08:35:46.091494"], ["updated_at", "2020-11-26 08:35:46.091494"]]
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1329)
+Completed 500 Internal Server Error in 8909ms (ActiveRecord: 1.9ms | Allocations: 333016)
+
+
+  
+ActionView::Template::Error (undefined method `name' for true:TrueClass):
+     8: 
+     9: <% if @player %>
+    10:   <div>
+    11:     <%= @player.name %>
+    12:     <%= @player.team %>
+    13:     <%= @player.projected_points %>
+    14: 
+  
+app/views/search/index.html.erb:11
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:37:05 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 157)
+Completed 200 OK in 25343ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 27438)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:38:25 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:38:27 -0600
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-11-26 08:38:34.180401"], ["updated_at", "2020-11-26 08:38:34.180401"]]
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 160)
+Completed 200 OK in 67922ms (Views: 6.0ms | ActiveRecord: 2.0ms | Allocations: 358446)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:39:33 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  ↳ app/models/player.rb:4:in `find_by_name'
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:39:35 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:15:in `create_from_api'
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-11-26 08:41:07.209358"], ["updated_at", "2020-11-26 08:41:07.209358"]]
+  ↳ app/models/player.rb:15:in `create_from_api'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:15:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 160)
+Completed 200 OK in 91244ms (Views: 4.0ms | ActiveRecord: 2.0ms | Allocations: 1061564)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:41:11 -0600
+Completed 500 Internal Server Error in 242000ms (ActiveRecord: 0.1ms | Allocations: 1078100)
+
+
+  
+Errno::EIO (Input/output error @ io_writev - <STDOUT>):
+  
+app/models/player.rb:9:in `create_from_api'
+app/controllers/search_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 242004ms (ActiveRecord: 0.3ms | Allocations: 1080321)
+
+
+  
+Errno::EIO (Input/output error @ io_writev - <STDOUT>):
+  
+app/models/player.rb:9:in `create_from_api'
+app/controllers/search_controller.rb:6:in `index'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[36mPlayer Create (0.3ms)[0m  [1m[32mINSERT INTO "players" ("name", "position", "team", "projected_points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dalvin Cook"], ["position", "RB"], ["team", "MIN"], ["projected_points", 393], ["created_at", "2020-11-26 08:43:42.337217"], ["updated_at", "2020-11-26 08:43:42.337217"]]
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 166)
+Completed 200 OK in 5963ms (Views: 3.1ms | ActiveRecord: 1.9ms | Allocations: 331124)
+
+
+Started GET "/search" for ::1 at 2020-11-26 02:46:29 -0600
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 577)
+Completed 200 OK in 149ms (Views: 138.7ms | ActiveRecord: 0.0ms | Allocations: 6573)
+
+
+Started GET "/search?player_name=dalvin+cook&commit=Search" for ::1 at 2020-11-26 02:46:34 -0600
+Processing by SearchController#index as HTML
+  Parameters: {"player_name"=>"dalvin cook", "commit"=>"Search"}
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."name" = ? LIMIT ?[0m  [["name", "dalvin cook"], ["LIMIT", 1]]
+  ↳ app/models/player.rb:4:in `find_by_name'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[36mPlayer Create (106.6ms)[0m  [1m[32mINSERT INTO "players" ("name", "position", "team", "projected_points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dalvin Cook"], ["position", "RB"], ["team", "MIN"], ["projected_points", 393], ["created_at", "2020-11-26 08:46:41.249170"], ["updated_at", "2020-11-26 08:46:41.249170"]]
+  ↳ app/models/player.rb:14:in `create_from_api'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/player.rb:14:in `create_from_api'
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 168)
+Completed 200 OK in 6520ms (Views: 5.4ms | ActiveRecord: 109.3ms | Allocations: 330204)
+
+
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]

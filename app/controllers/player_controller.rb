@@ -1,0 +1,4 @@
+class PlayerController < ApplicationController
+ 
+
+end
