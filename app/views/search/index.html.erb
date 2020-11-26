@@ -1,0 +1,13 @@
+<h2>Search for nfl players to add to your team</h2>
+
+<%= form_with(url: search_path, method: "get", local: true) do %>
+  <%= label_tag(:player_name, "Enter Player name:") %>
+  <%= text_field_tag(:player_name) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @response %>
+  <div>
+    <%= @response.body %>
+  </div>
+<% end %>
