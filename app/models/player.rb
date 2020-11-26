@@ -8,7 +8,7 @@ class Player < ApplicationRecord
         @response = SportsData::Search.by_player(name)
         player = Player.new
         player.name = @response["Name"]
-        player.team = @response["Team"]
+        player.nfl_team = @response["Team"]
         player.position = @response["Position"]
         player.projected_points = @response["FantasyPoints"]
         player.save

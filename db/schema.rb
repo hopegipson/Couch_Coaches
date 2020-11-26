@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_053833) do
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "position"
-    t.string "team"
+    t.string "nfl_team"
     t.integer "projected_points"
     t.integer "team_id"
     t.datetime "created_at", precision: 6, null: false
