@@ -1620,3 +1620,305 @@ Completed 200 OK in 72ms (Views: 56.1ms | ActiveRecord: 1.2ms | Allocations: 201
 Completed 200 OK in 69ms (Views: 53.3ms | ActiveRecord: 0.2ms | Allocations: 19831)
 
 
+Started GET "/teams/new" for ::1 at 2020-11-28 17:18:07 -0600
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1454)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 2952)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @team do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:18:08 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 843)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1103)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @team do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:19:13 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 847)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1106)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @team do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:19:28 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 847)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1106)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @team do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams" for ::1 at 2020-11-28 17:19:34 -0600
+Processing by TeamsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 793)
+
+
+  
+NoMethodError (undefined method `all' for nil:NilClass):
+  
+app/controllers/teams_controller.rb:5:in `index'
+Started GET "/teams" for ::1 at 2020-11-28 17:19:59 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1190)
+Completed 200 OK in 35ms (Views: 23.2ms | ActiveRecord: 0.6ms | Allocations: 7570)
+
+
+Started GET "/teams/new" for ::1 at 2020-11-28 17:20:02 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 131.0ms | Allocations: 60177)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.4ms | Allocations: 63831)
+
+
+  
+ActionView::Template::Error (undefined method `user_id_field' for #<#<Class:0x00007fef92c738d0>:0x00007fef92d4bb90>
+Did you mean?  user_url):
+    4:       <%= f.text_field :name %>
+    5:     </p>
+    6:     <p>
+    7:     <%= user_id_field(@team) %>
+    8: 
+    9:     </p>
+   10:       <%= f.submit %>
+  
+app/views/teams/new.html.erb:7
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:21:44 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 801)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1262)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @team do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:22:04 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 845)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1104)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @team do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:22:34 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1024)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1993)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for (@team) do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:22:35 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 845)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1105)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for (@team) do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:22:39 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 845)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1104)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for (@team) do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:22:54 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1023)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1991)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@team) do |f|%>
+    2:     <%= user_id_field(@team) %>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:24:13 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 977)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1994)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for (@team) do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started PUT "/__web_console/repl_sessions/602bb3f218b3e20b935771ede159b322" for ::1 at 2020-11-28 17:24:25 -0600
+Started PUT "/__web_console/repl_sessions/602bb3f218b3e20b935771ede159b322" for ::1 at 2020-11-28 17:24:26 -0600
+Started GET "/teams/" for ::1 at 2020-11-28 17:24:49 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1167)
+Completed 200 OK in 12ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 4357)
+
+
+Started GET "/teams/new" for ::1 at 2020-11-28 17:24:52 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 125.9ms | Allocations: 58686)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.3ms | Allocations: 62096)
+
+
+  
+ActionView::Template::Error (undefined method `user_id_field' for #<#<Class:0x00007fef891be448>:0x00007fef8926c8b8>
+Did you mean?  user_url):
+    4:       <%= f.text_field :name %>
+    5:     </p>
+    6:     <p>
+    7:     <%= user_id_field(@team) %>
+    8: 
+    9:     </p>
+   10:       <%= f.submit %>
+  
+app/views/teams/new.html.erb:7
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:25:08 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 816)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1277)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for (@team) do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:25:11 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 845)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1104)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for (@team) do |f|%>
+    2:     <p>
+    3:       <%= f.label :name %>
+    4:       <%= f.text_field :name %>
+  
+app/views/teams/new.html.erb:1
+Started GET "/teams" for ::1 at 2020-11-28 17:25:14 -0600
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1045)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 0.7ms | Allocations: 3736)
+
+
+Started GET "/teams/new" for ::1 at 2020-11-28 17:25:16 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 124.1ms | Allocations: 58701)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.3ms | Allocations: 62160)
+
+
+  
+ActionView::Template::Error (undefined method `user_id_field' for #<#<Class:0x00007fef92a46d78>:0x00007fef8943d908>
+Did you mean?  user_url):
+    4:       <%= f.text_field :name %>
+    5:     </p>
+    6:     <p>
+    7:     <%= user_id_field(@team) %>
+    8: 
+    9:     </p>
+   10:       <%= f.submit %>
+  
+app/views/teams/new.html.erb:7
+app/views/teams/new.html.erb:1
+Started PUT "/__web_console/repl_sessions/374d4e701ad3c5d4548a0e7e1afc2812" for ::1 at 2020-11-28 17:25:23 -0600
+Started PUT "/__web_console/repl_sessions/374d4e701ad3c5d4548a0e7e1afc2812" for ::1 at 2020-11-28 17:25:24 -0600

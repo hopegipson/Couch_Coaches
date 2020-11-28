@@ -2,10 +2,13 @@ class TeamsController < ApplicationController
     before_action :find_team, only: [:show, :create]
 
     def index
-       @teams.all
+       @teams = Team.all
+       current_user
+    end
       
     def new
-        @team = Team.new
+       @team = Team.new
+       @users = User.all
     end
 
     def create 
@@ -16,6 +19,7 @@ class TeamsController < ApplicationController
     end
 
     def show
+        current_user
     end
 
 
