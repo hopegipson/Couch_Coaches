@@ -1,1 +1,6 @@
-Homepage
+<% if !@current_user %>
+<h3><%= link_to "Log In", signin_path %> | <%= link_to  "Sign Up", new_user_path %> </h3>
+<% end %>
+<% if @current_user %>
+<h3><%= link_to "Home", root_path %> | <%= link_to  "#{@current_user.name}'s Profile", user_path(@current_user) %>| <%= link_to  "Log Out", logout_path %> </h3>
+<% end %>

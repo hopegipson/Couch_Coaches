@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show]
-    has_many :teams
 
     def new
         @user = User.new

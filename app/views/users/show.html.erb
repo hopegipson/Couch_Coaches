@@ -1,0 +1,8 @@
+<h1> First Name: <%= @user.first_name %></h1>
+<h1> Last Name: <%= @user.last_name %></h1>
+
+<% if @user.admin %>
+    <h1>ADMIN</h1>
+<% end %>
+<%= link_to  "See players", players_path %>
+<%= button_to  "Log Out", logout_path, method: "post" %>
