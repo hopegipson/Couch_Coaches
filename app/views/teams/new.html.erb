@@ -1,0 +1,11 @@
+<%= form_for @team do |f|%>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+    <%= f.label :user %>
+    <%= f.number_field :user_id %>
+    </p>
+      <%= f.submit %>
+    <% end %>
