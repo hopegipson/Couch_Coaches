@@ -1,7 +1,7 @@
 class Player < ApplicationRecord
 
     def self.find_by_name(name)
-        Player.all.find_by(name: "#{name}")
+        Player.all.find_by(name: name.titleize)
     end
 
     def self.create_from_api(name)

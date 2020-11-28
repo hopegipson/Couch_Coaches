@@ -1,0 +1,9 @@
+<h1>NFL Players</h1>
+<% @players.each do |player| %>
+  <div>
+    <h2><%= player.name %></h2>
+    <p><%= player.nfl_team %></p>
+    <p><%= player.position %></p>
+    <p><%= player.projected_points %></p>
+  </div>
+<% end %>
