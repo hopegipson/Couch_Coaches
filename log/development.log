@@ -2835,3 +2835,1840 @@ Processing by PlayersController#index as HTML
 Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 4141)
 
 
+Started GET "/teams" for ::1 at 2020-11-28 17:54:55 -0600
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/MODULE 3/fantasy_football/app/controllers/teams_controller.rb:37: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/teams_controller.rb:37: syntax error, unexpected end, expecting end-of-input
+app/controllers/teams_controller.rb:37: syntax error, unexpected end, expecting end-of-input
+app/controllers/teams_controller.rb:37: syntax error, unexpected end, expecting end-of-input
+Started GET "/teams" for ::1 at 2020-11-28 17:55:33 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1010)
+Completed 200 OK in 65ms (Views: 29.7ms | ActiveRecord: 1.9ms | Allocations: 16153)
+
+
+Started GET "/teams/new" for ::1 at 2020-11-28 17:55:41 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered teams/new.html.erb within layouts/application (Duration: 147.3ms | Allocations: 67506)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.4ms | Allocations: 71079)
+
+
+  
+ActionView::Template::Error (undefined method `user_id_field' for #<#<Class:0x00007fca386f14b8>:0x00007fca3bac74e0>
+Did you mean?  user_url):
+    4:       <%= f.text_field :name %>
+    5:     </p>
+    6:     <p>
+    7:     <%= user_id_field(@team) %>
+    8: 
+    9:     </p>
+   10:       <%= f.submit %>
+  
+app/views/teams/new.html.erb:7
+app/views/teams/new.html.erb:1
+Started GET "/teams" for ::1 at 2020-11-28 17:57:32 -0600
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 794)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 4382)
+
+
+Started GET "/teams/new" for ::1 at 2020-11-28 17:57:33 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered teams/new.html.erb within layouts/application (Duration: 112.5ms | Allocations: 65897)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.1ms | Allocations: 66322)
+
+
+  
+ActionView::Template::Error (undefined method `user_id_field' for #<#<Class:0x00007fca3ad900b0>:0x00007fca3c57ba58>
+Did you mean?  user_url):
+    4:       <%= f.text_field :name %>
+    5:     </p>
+    6:     <p>
+    7:     <%= user_id_field(@team) %>
+    8: 
+    9:     </p>
+   10:       <%= f.submit %>
+  
+app/views/teams/new.html.erb:7
+app/views/teams/new.html.erb:1
+Started GET "/teams/new" for ::1 at 2020-11-28 17:57:58 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 993)
+Completed 200 OK in 20ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3782)
+
+
+Started GET "/teams" for ::1 at 2020-11-28 17:58:58 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1058)
+Completed 200 OK in 23ms (Views: 6.0ms | ActiveRecord: 1.1ms | Allocations: 12419)
+
+
+Started GET "/teams/new" for ::1 at 2020-11-28 17:58:59 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1002)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 6081)
+
+
+Started POST "/teams" for ::1 at 2020-11-28 17:59:24 -0600
+Processing by TeamsController#create as HTML
+  Parameters: {"authenticity_token"=>"3CETslwx+zXC0sHcroG+mXGOmn2cSBuAdLCgChRiBA9iSb3URy3FUsVDJzKMGLiRSEENDdMCPyBZqnxv7Jodvw==", "team"=>{"name"=>"demo"}, "commit"=>"Create Team"}
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:30:in `find_team'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:17:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:17:in `create'
+  [1m[36mTeam Create (0.7ms)[0m  [1m[32mINSERT INTO "teams" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "demo"], ["user_id", 3], ["created_at", "2020-11-28 23:59:24.946630"], ["updated_at", "2020-11-28 23:59:24.946630"]]
+  ↳ app/controllers/teams_controller.rb:17:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teams_controller.rb:17:in `create'
+Redirected to http://localhost:3000/teams/1
+Completed 302 Found in 27ms (ActiveRecord: 1.7ms | Allocations: 9451)
+
+
+Started GET "/teams/1" for ::1 at 2020-11-28 17:59:24 -0600
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:30:in `find_team'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/teams/show.html.erb:2
+  Rendered teams/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3407)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 5883)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x00007fca470736b8>):
+    1: <h1> Name: <%= @team.name %></h1>
+    2: <h1> Owner: <%= @team.user.name %></h1>
+  
+app/views/teams/show.html.erb:2
+Started GET "/teams/1" for ::1 at 2020-11-28 17:59:35 -0600
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:30:in `find_team'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/teams/show.html.erb:2
+  Rendered teams/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 791)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4901)
+
+
+Started GET "/teams" for ::1 at 2020-11-28 17:59:51 -0600
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 797)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 3610)
+
+
+Started GET "/teams" for ::1 at 2020-11-28 19:03:09 -0600
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 4713)
+Completed 200 OK in 56ms (Views: 18.9ms | ActiveRecord: 1.6ms | Allocations: 17220)
+
+
+Started GET "/teams/new" for ::1 at 2020-11-28 19:04:27 -0600
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/new.html.erb within layouts/application (Duration: 28.9ms | Allocations: 4794)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 5262)
+
+
+Started GET "/teams" for ::1 at 2020-11-28 19:10:51 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 816)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 1.0ms | Allocations: 2840)
+
+
+Started GET "/teams" for ::1 at 2020-11-28 19:11:08 -0600
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 798)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 2790)
+
+
+Started GET "/teams" for ::1 at 2020-11-28 19:13:04 -0600
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 645)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1754)
+
+
+Started GET "/teams" for ::1 at 2020-11-28 19:13:47 -0600
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 799)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 2807)
+
+
+Started GET "/root_path" for ::1 at 2020-11-28 19:13:49 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/root_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/root_path" for ::1 at 2020-11-28 19:14:06 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/root_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/root_path" for ::1 at 2020-11-28 19:14:10 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/root_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/root_path" for ::1 at 2020-11-28 19:14:57 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/root_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/root_path" for ::1 at 2020-11-28 19:15:00 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/root_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/teams" for ::1 at 2020-11-28 19:17:07 -0600
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.erb:2
+  Rendered teams/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 797)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 2790)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:17:08 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2879)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms | Allocations: 4249)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x00007fec0b9c5dc0>):
+    2: <h3><%= link_to "Log In", signin_path %> | <%= link_to  "Sign Up", new_user_path %> </h3>
+    3: <% end %>
+    4: <% if @current_user %>
+    5: <h3><%= link_to "Home", root_path %> | <%= link_to  "#{@current_user.name}'s Profile", user_path(@current_user) %>| <%= link_to  "Log Out", logout_path %> </h3>
+    6: <% end %>
+  
+app/views/application/home.html.erb:5
+Started GET "/" for ::1 at 2020-11-28 19:17:47 -0600
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3467)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.8ms | Allocations: 14042)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x00007fdef2a171c8>):
+    2: <h3><%= link_to "Log In", signin_path %> | <%= link_to  "Sign Up", new_user_path %> </h3>
+    3: <% end %>
+    4: <% if @current_user %>
+    5: <h3><%= link_to "Home", root_path %> | <%= link_to  "#{@current_user.name}'s Profile", user_path(@current_user) %>| <%= link_to  "Log Out", logout_path %> </h3>
+    6: <% end %>
+  
+app/views/application/home.html.erb:5
+Started GET "/" for ::1 at 2020-11-28 19:19:20 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 295)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1978)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:19:53 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 291)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 1968)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:20:03 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 291)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 1967)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:20:07 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 290)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 1949)
+
+
+Started GET "/players_path" for ::1 at 2020-11-28 19:20:08 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/players_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-11-28 19:20:42 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 290)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 1948)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:21:03 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 91)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 1174)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:21:24 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 290)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1953)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:21:51 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 295)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.1ms | Allocations: 2879)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fantasy Football App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" <%=link_to "players_path", players_path
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+
+    <div class="wrapper">    
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
+
+):
+1:    <!DOCTYPE html>
+2:     <html lang="en">
+3:      <head>
+4:        <meta charset="utf-8" />
+5:        <title>Fantasy Football App</title>
+6:        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+7:        <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+8:    
+9:        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+10:        <a class="navbar-brand" href="#">Navbar</a>
+11:        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+12:          <span class="navbar-toggler-icon"></span>
+13:        </button>
+14:      
+15:        <div class="collapse navbar-collapse" id="navbarColor02">
+16:          <ul class="navbar-nav mr-auto">
+17:            <li class="nav-item active">
+18:              <a class="nav-link" <%=link_to "players_path", players_path
+19:                <span class="sr-only">(current)</span>
+20:              </a>
+21:            </li>
+22:            <li class="nav-item">
+23:              <a class="nav-link" href="#">Features</a>
+24:            </li>
+25:            <li class="nav-item">
+26:              <a class="nav-link" href="#">Pricing</a>
+27:            </li>
+28:            <li class="nav-item">
+29:              <a class="nav-link" href="#">About</a>
+30:            </li>
+31:            <li class="nav-item dropdown">
+32:              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+33:              <div class="dropdown-menu">
+34:                <a class="dropdown-item" href="#">Action</a>
+35:                <a class="dropdown-item" href="#">Another action</a>
+36:                <a class="dropdown-item" href="#">Something else here</a>
+37:                <div class="dropdown-divider"></div>
+38:                <a class="dropdown-item" href="#">Separated link</a>
+39:              </div>
+40:            </li>
+41:          </ul>
+42:          <form class="form-inline my-2 my-lg-0">
+43:            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+44:            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+45:          </form>
+46:        </div>
+47:      </nav>
+48:    
+49:    
+50:        <div class="wrapper">    
+51:          <%= yield %>
+52:        </div>
+53:      </body>
+54:    </html>
+  
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+Started GET "/" for ::1 at 2020-11-28 19:21:53 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 84)
+Completed 500 Internal Server Error in 501ms (ActiveRecord: 0.4ms | Allocations: 909958)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fantasy Football App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" <%=link_to "players_path", players_path
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+
+    <div class="wrapper">    
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
+
+):
+1:    <!DOCTYPE html>
+2:     <html lang="en">
+3:      <head>
+4:        <meta charset="utf-8" />
+5:        <title>Fantasy Football App</title>
+6:        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+7:        <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+8:    
+9:        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+10:        <a class="navbar-brand" href="#">Navbar</a>
+11:        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+12:          <span class="navbar-toggler-icon"></span>
+13:        </button>
+14:      
+15:        <div class="collapse navbar-collapse" id="navbarColor02">
+16:          <ul class="navbar-nav mr-auto">
+17:            <li class="nav-item active">
+18:              <a class="nav-link" <%=link_to "players_path", players_path
+19:                <span class="sr-only">(current)</span>
+20:              </a>
+21:            </li>
+22:            <li class="nav-item">
+23:              <a class="nav-link" href="#">Features</a>
+24:            </li>
+25:            <li class="nav-item">
+26:              <a class="nav-link" href="#">Pricing</a>
+27:            </li>
+28:            <li class="nav-item">
+29:              <a class="nav-link" href="#">About</a>
+30:            </li>
+31:            <li class="nav-item dropdown">
+32:              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+33:              <div class="dropdown-menu">
+34:                <a class="dropdown-item" href="#">Action</a>
+35:                <a class="dropdown-item" href="#">Another action</a>
+36:                <a class="dropdown-item" href="#">Something else here</a>
+37:                <div class="dropdown-divider"></div>
+38:                <a class="dropdown-item" href="#">Separated link</a>
+39:              </div>
+40:            </li>
+41:          </ul>
+42:          <form class="form-inline my-2 my-lg-0">
+43:            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+44:            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+45:          </form>
+46:        </div>
+47:      </nav>
+48:    
+49:    
+50:        <div class="wrapper">    
+51:          <%= yield %>
+52:        </div>
+53:      </body>
+54:    </html>
+  
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+Started GET "/" for ::1 at 2020-11-28 19:22:02 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 84)
+Completed 500 Internal Server Error in 1227ms (ActiveRecord: 0.1ms | Allocations: 2043652)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fantasy Football App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" <%=link_to "players_path", Hope
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+
+    <div class="wrapper">    
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
+
+):
+1:    <!DOCTYPE html>
+2:     <html lang="en">
+3:      <head>
+4:        <meta charset="utf-8" />
+5:        <title>Fantasy Football App</title>
+6:        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+7:        <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+8:    
+9:        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+10:        <a class="navbar-brand" href="#">Navbar</a>
+11:        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+12:          <span class="navbar-toggler-icon"></span>
+13:        </button>
+14:      
+15:        <div class="collapse navbar-collapse" id="navbarColor02">
+16:          <ul class="navbar-nav mr-auto">
+17:            <li class="nav-item active">
+18:              <a class="nav-link" <%=link_to "players_path", Hope
+19:                <span class="sr-only">(current)</span>
+20:              </a>
+21:            </li>
+22:            <li class="nav-item">
+23:              <a class="nav-link" href="#">Features</a>
+24:            </li>
+25:            <li class="nav-item">
+26:              <a class="nav-link" href="#">Pricing</a>
+27:            </li>
+28:            <li class="nav-item">
+29:              <a class="nav-link" href="#">About</a>
+30:            </li>
+31:            <li class="nav-item dropdown">
+32:              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+33:              <div class="dropdown-menu">
+34:                <a class="dropdown-item" href="#">Action</a>
+35:                <a class="dropdown-item" href="#">Another action</a>
+36:                <a class="dropdown-item" href="#">Something else here</a>
+37:                <div class="dropdown-divider"></div>
+38:                <a class="dropdown-item" href="#">Separated link</a>
+39:              </div>
+40:            </li>
+41:          </ul>
+42:          <form class="form-inline my-2 my-lg-0">
+43:            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+44:            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+45:          </form>
+46:        </div>
+47:      </nav>
+48:    
+49:    
+50:        <div class="wrapper">    
+51:          <%= yield %>
+52:        </div>
+53:      </body>
+54:    </html>
+  
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:19: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:20: unknown regexp option - a
+app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:23: unknown regexp option - a
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - a
+app/views/layouts/application.html.erb:27: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:32: unknown regexp option - a
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - a
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:36: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp options - dv
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/layouts/application.html.erb:39: unknown regexp options - dv
+app/views/layouts/application.html.erb:40: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:43: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:44: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:45: unknown regexp options - fr
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - av
+app/views/layouts/application.html.erb:50: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:51: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:58: syntax error, unexpected end, expecting ')'
+Started GET "/" for ::1 at 2020-11-28 19:22:43 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 290)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 1955)
+
+
+Started GET "/players_path" for ::1 at 2020-11-28 19:22:46 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/players_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/players_path" for ::1 at 2020-11-28 19:22:54 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/players_path"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/players" for ::1 at 2020-11-28 19:23:00 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1331)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.7ms | Allocations: 2798)
+
+
+Started GET "/" for ::1 at 2020-11-28 19:23:01 -0600
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 290)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1644)
+
+
+Started GET "/players" for ::1 at 2020-11-28 19:24:23 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 766)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 1948)
+
+
+Started GET "/players" for ::1 at 2020-11-28 19:28:32 -0600
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2492)
+Completed 200 OK in 30ms (Views: 16.7ms | ActiveRecord: 0.9ms | Allocations: 4950)
+
+
+Started GET "/stylesheets/bootstrap.css" for ::1 at 2020-11-28 19:28:32 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/bootstrap.css"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/players" for ::1 at 2020-11-28 19:28:34 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 604)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 908)
+
+
+Started GET "/stylesheets/bootstrap.css" for ::1 at 2020-11-28 19:28:34 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/bootstrap.css"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/players" for ::1 at 2020-11-28 19:28:51 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 774)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 1964)
+
+
+Started GET "/players" for ::1 at 2020-11-28 19:34:04 -0600
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/players" for ::1 at 2020-11-28 19:34:04 -0600
+Processing by PlayersController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2854)
+  Rendered players/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2843)
+Completed 200 OK in 30ms (Views: 17.3ms | ActiveRecord: 0.4ms | Allocations: 7299)
+
+
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 3999)
+
+
+Started GET "/players" for ::1 at 2020-11-28 19:34:57 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 765)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 1959)
+
+
+Started GET "/stylesheets/bootstrap..css" for ::1 at 2020-11-28 19:34:57 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/bootstrap..css"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/players" for ::1 at 2020-11-28 19:35:06 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 764)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 1959)
+
+
+Started GET "/players" for ::1 at 2020-11-28 19:35:22 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 775)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 1977)
+
+
+Started GET "/players" for ::1 at 2020-11-28 19:35:35 -0600
+Processing by PlayersController#index as HTML
+  Rendering players/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/views/players/index.html.erb:2
+  Rendered players/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 605)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 909)
+
+

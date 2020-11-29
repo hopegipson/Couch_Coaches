@@ -13,9 +13,10 @@ class TeamsController < ApplicationController
 
     def create 
         @team = Team.create(team_params)
+        @team.user_id = current_user.id
         return redirect_to new_team_path unless @team.save
         redirect_to team_path(@team)
-        end
+
     end
 
     def show

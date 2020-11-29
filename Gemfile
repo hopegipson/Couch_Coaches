@@ -23,6 +23,8 @@ gem 'pry'
 gem 'faraday'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
