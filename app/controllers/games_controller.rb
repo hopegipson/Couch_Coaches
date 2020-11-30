@@ -43,9 +43,11 @@ class GamesController < ApplicationController
         @game = Game.find_by(id: params[:id])
     end
 
-    def game_params
-      params.require(:game).permit(:team1_player1_score, :team1_player2_score, :team1_player3_score, :team1_player4_score, :team1_player5_score, :team2_player1_score, :team2_player2_score, :team2_player3_score, :team2_player4_score, :team2_player5_score, :scored)
-  end
+      def game_params
+          params.require(:game).permit(:team1_player1_score, :team1_player2_score, :team1_player3_score, :team1_player4_score, :team1_player5_score, :team2_player1_score, :team2_player2_score, :team2_player3_score, :team2_player4_score, :team2_player5_score, :scored)
+      end
+
+
 
 
 

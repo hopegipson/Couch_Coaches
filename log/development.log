@@ -34494,3 +34494,350 @@ Processing by GamesController#show as HTML
 Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 0.7ms | Allocations: 11501)
 
 
+Started GET "/games/1" for ::1 at 2020-11-30 03:58:06 -0600
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:12:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:16:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/show.html.erb:24:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:9:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/show.html.erb:67:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:9:in `total_team_points'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered games/show.html.erb within layouts/application (Duration: 27.1ms | Allocations: 19375)
+Completed 200 OK in 181ms (Views: 87.3ms | ActiveRecord: 4.2ms | Allocations: 67054)
+
+
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."winner_id" = ? LIMIT ?[0m  [["winner_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."winner_id" = ?[0m  [["winner_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."loser_id" = ?[0m  [["loser_id", 2]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" INNER JOIN "competitions" ON "games"."id" = "competitions"."game_id" WHERE "competitions"."team_id" = ? LIMIT ?[0m  [["team_id", 2], ["LIMIT", 11]]
+Started GET "/games/1" for ::1 at 2020-11-30 04:14:13 -0600
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:12:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  [1m[36mCompetition Load (0.2ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:16:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/show.html.erb:24:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/show.html.erb:67:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered games/show.html.erb within layouts/application (Duration: 25.7ms | Allocations: 17891)
+Completed 200 OK in 223ms (Views: 83.5ms | ActiveRecord: 4.5ms | Allocations: 67406)
+
+
+Started GET "/games/1/edit" for ::1 at 2020-11-30 04:14:17 -0600
+Processing by GamesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:22:in `edit'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:23:in `edit'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:26:in `edit'
+  Rendering games/edit.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/edit.html.erb:25:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/edit.html.erb:68:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  Rendered games/edit.html.erb within layouts/application (Duration: 26.0ms | Allocations: 6238)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 0.5ms | Allocations: 14833)
+
+
+Started PATCH "/games/1" for ::1 at 2020-11-30 04:14:20 -0600
+Processing by GamesController#update as HTML
+  Parameters: {"authenticity_token"=>"RVSsSD6AkTpBQH32LkCsrocD0HK0fr6kVg+ujlCMYSSNRe/vXu+1llBDcgQQuZ7YttBPUKQ7HO+lRcd8j0+PTw==", "game"=>{"team1_player1_score"=>"10", "team1_player2_score"=>"20", "team2_player1_score"=>"30", "team2_player2_score"=>"10", "scored"=>"1"}, "commit"=>"Update Game", "id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/models/game.rb:16:in `choose_winner'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/models/game.rb:17:in `choose_winner'
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 3475)
+
+
+Started GET "/games/1" for ::1 at 2020-11-30 04:14:20 -0600
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:12:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:16:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/show.html.erb:24:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/show.html.erb:67:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered games/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3639)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 11509)
+
+
+Started GET "/competitions/new" for ::1 at 2020-11-30 04:14:26 -0600
+Processing by CompetitionsController#new as HTML
+  Rendering competitions/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/competitions/new.html.erb:5
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/competitions/new.html.erb:7
+  Rendered competitions/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3617)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.3ms | Allocations: 9597)
+
+
+Started POST "/competitions" for ::1 at 2020-11-30 04:14:36 -0600
+Processing by CompetitionsController#create as HTML
+  Parameters: {"authenticity_token"=>"x1UgM7LQZskNkT+6sq1zaOa5JIkeZHAZ4Z1Jnv+iV4/WxQSbAkoLaox3QyCR/VW96m0iycYDNHXQJxgmeuZiKg==", "competition"=>{"team1_id"=>"3", "team2_id"=>"2", "game_week"=>"1"}, "commit"=>"Create Competition"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/competitions_controller.rb:12:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/competitions_controller.rb:12:in `create'
+  [1m[36mTeam Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/competitions_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/competitions_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/competitions_controller.rb:14:in `create'
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-11-30 10:14:36.778607"], ["updated_at", "2020-11-30 10:14:36.778607"]]
+  ↳ app/controllers/competitions_controller.rb:14:in `create'
+  [1m[36mCompetition Create (0.2ms)[0m  [1m[32mINSERT INTO "competitions" ("team1_id", "team2_id", "game_id", "game_week", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["team1_id", 3], ["team2_id", 2], ["game_id", 2], ["game_week", 1], ["created_at", "2020-11-30 10:14:36.804355"], ["updated_at", "2020-11-30 10:14:36.804355"]]
+  ↳ app/controllers/competitions_controller.rb:14:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/competitions_controller.rb:14:in `create'
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 35ms (ActiveRecord: 2.1ms | Allocations: 9838)
+
+
+Started GET "/games/2" for ::1 at 2020-11-30 04:14:36 -0600
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:12:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:16:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/show.html.erb:24:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/show.html.erb:67:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered games/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3648)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 11530)
+
+
+Started GET "/games/2/edit" for ::1 at 2020-11-30 04:14:45 -0600
+Processing by GamesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:22:in `edit'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:23:in `edit'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:26:in `edit'
+  Rendering games/edit.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/edit.html.erb:25:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/edit.html.erb:68:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  Rendered games/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3768)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.6ms | Allocations: 12200)
+
+
+Started PATCH "/games/2" for ::1 at 2020-11-30 04:14:59 -0600
+Processing by GamesController#update as HTML
+  Parameters: {"authenticity_token"=>"ef2GlEaGZE6nPR05QkmsiGxJPtKm21kJsHgtVu3pNDmGQ/HK5fzNfcWrUSpgAL1gaZ30JoKMLVfpyDByELTWVg==", "game"=>{"team1_player1_score"=>"5", "team1_player2_score"=>"100", "team2_player1_score"=>"10", "team2_player2_score"=>"10", "scored"=>"1"}, "commit"=>"Update Game", "id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:31:in `update'
+  [1m[36mGame Update (0.3ms)[0m  [1m[33mUPDATE "games" SET "team1_player1_score" = ?, "team1_player2_score" = ?, "team2_player1_score" = ?, "team2_player2_score" = ?, "scored" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["team1_player1_score", 5], ["team1_player2_score", 100], ["team2_player1_score", 10], ["team2_player2_score", 10], ["scored", 1], ["updated_at", "2020-11-30 10:14:59.812516"], ["id", 2]]
+  ↳ app/controllers/games_controller.rb:31:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:31:in `update'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/models/game.rb:13:in `choose_winner'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/models/game.rb:14:in `choose_winner'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:34:in `update'
+  [1m[36mGame Update (0.3ms)[0m  [1m[33mUPDATE "games" SET "winner_id" = ?, "loser_id" = ?, "team1_total_score" = ?, "team2_total_score" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["winner_id", 3], ["loser_id", 2], ["team1_total_score", 105], ["team2_total_score", 20], ["updated_at", "2020-11-30 10:14:59.818401"], ["id", 2]]
+  ↳ app/controllers/games_controller.rb:34:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:34:in `update'
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms | Allocations: 7614)
+
+
+Started GET "/games/2" for ::1 at 2020-11-30 04:14:59 -0600
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:12:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:16:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/show.html.erb:24:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/show.html.erb:67:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered games/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3635)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 11501)
+
+
+Started GET "/games/2" for ::1 at 2020-11-30 04:18:00 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:12:in `show'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:16:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/show.html.erb:24:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/show.html.erb:67:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered games/show.html.erb within layouts/application (Duration: 19.7ms | Allocations: 17356)
+Completed 200 OK in 82ms (Views: 24.3ms | ActiveRecord: 3.5ms | Allocations: 56438)
+
+
+Started GET "/games/2" for ::1 at 2020-11-30 04:18:12 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms | Allocations: 16463)
+
+
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/MODULE 3/fantasy_football/app/models/team.rb:7: syntax error, unexpected ':', expecting end
+...mes, :through => :competitions:foreign_key => 'loser_id'
+...                              ^):
+  
+app/models/team.rb:7: syntax error, unexpected ':', expecting end
+app/models/team.rb:7: syntax error, unexpected ':', expecting end
+app/models/team.rb:7: syntax error, unexpected ':', expecting end
+app/controllers/games_controller.rb:12:in `show'
+Started GET "/games/2" for ::1 at 2020-11-30 04:18:17 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:43:in `find_game'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team1_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:12:in `show'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" INNER JOIN "competitions" ON "teams"."id" = "competitions"."team2_id" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  [1m[36mCompetition Load (0.1ms)[0m  [1m[34mSELECT "competitions".* FROM "competitions" WHERE "competitions"."game_id" = ? LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:16:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/games/show.html.erb:24:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/games/show.html.erb:67:in `each_with_index'
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:11:in `total_team_points'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered games/show.html.erb within layouts/application (Duration: 19.1ms | Allocations: 16634)
+Completed 200 OK in 69ms (Views: 22.9ms | ActiveRecord: 3.4ms | Allocations: 52779)
+
+
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]

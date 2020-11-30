@@ -97,6 +97,8 @@
 <div style="position: relative; width: 600px; height: 400px;">    
 
     <div style="position: absolute; bottom: 5px; ">
+    <h2> Winner: <%= @game.winner_id %> </h2>
+
     <h2> Game Scored: <%= @game.scored %> </h2>
     <% if admin? %>
     <%= link_to  "Score Team 1", edit_game_path %>
