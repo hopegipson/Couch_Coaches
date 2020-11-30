@@ -22,6 +22,10 @@ class Player < ApplicationRecord
         find_by_name(name) || create_from_api(name)
     end
 
+    def week_projection
+        self.projected_points / 17
+    end
+
 
 
 end

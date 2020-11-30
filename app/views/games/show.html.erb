@@ -1,0 +1,50 @@
+
+<h1> Game </h1>
+
+
+<table class="table table-hover">
+
+  <thead>
+  <tbody>
+  <tr class="table-active">
+  <td></td>
+    <th scope="row"><%=@home_team.name%></th>
+    <td></td>
+    <td></td>
+
+ 
+
+    </tbody>
+
+
+  </tr>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">Name</th>
+      <td>Position</td>
+      <td>Projected Points</td>
+      <td>Actual Points</td>
+
+   
+
+      </tbody>
+
+
+    </tr>
+    <% @home_players.each do |player| %>
+
+    <tr>
+
+      <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
+      <th scope="col"><%= player.position %></th>
+      <th scope="col"><%= player.week_projection%> Points</th>
+
+
+      <% end %>
+
+    </tr>
+
+  </thead>
+ 
+</table> 
+
