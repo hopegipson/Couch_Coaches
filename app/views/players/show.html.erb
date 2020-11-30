@@ -2,8 +2,10 @@
 <h1> Position: <%= @player.position%></h1>
 <h1> NFL TEAM: <%= @player.nfl_team %></h1>
 <h1> Projected Season Points: <%= @player.projected_points %></h1>
-<%= if @player.team %>
-<h1> Fantasy Team: <%= @player.team %></h1>
-<%= else %>
-<h1> Fantasy Team: None so far, Free Agent </h1>
-<%= end %>
+<h1> Fantasy Team: <%= @player.team.name %></h1>
+
+
+<%= button_to  "Add Player ", edit_player_path %>
+<%= button_to  "Release Player ", edit_player_path %>
+
+

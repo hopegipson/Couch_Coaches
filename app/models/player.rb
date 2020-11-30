@@ -1,4 +1,6 @@
 class Player < ApplicationRecord
+    belongs_to :team
+
 
     def self.find_by_name(name)
         Player.all.find_by(name: name.titleize)
@@ -11,6 +13,7 @@ class Player < ApplicationRecord
         player.nfl_team = @response["Team"]
         player.position = @response["Position"]
         player.projected_points = @response["FantasyPoints"]
+        player.team_id = 1
         player.save
         player
     end

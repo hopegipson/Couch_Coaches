@@ -17,9 +17,53 @@ DATA = {
     ["Cay", "Aldag", "cay@gmail.com", "cayaldag", "password"],
     ["Curtis", "Gipson", "curtis@gmail.com", "curtisgipson", "password"],
     ["Coni", "Gipson", "hope@gmail.com", "hopegipson", "password"],
-    ["Davis Cleveland", 1, 3, 5, 36, "password"],
   ],
+  :team_keys =>
+  ["name", "user_id"],
+ :teams => [
+   ["Free Agents", 1],
+   ["Run CMC", 2],
+   ["Mixon It Up", 3],
+   ["Golladay Inn Express", 4],
+   ["Mahomes Alone", 5],
+   ["Party Like A Gronk Star", 6],
+   ["View From Lamar", 2],
+   ["Little Red Fournette", 3],
+ ],
   :admins => [
     "Hope Gipson",
   ]
 }
+
+def main
+  make_users
+  make_admin
+  make_teams
+end
+
+def make_users
+  DATA[:users].each do |user|
+    new_user = User.new
+    user.each_with_index do |attribute, i|
+      new_user.send(DATA[:user_keys][i]+"=", attribute)
+    end
+    new_user.save
+  end
+end
+
+def make_admin
+  DATA[:admins].each do |name|
+    User.create(name: name, admin: true, password: 'password')
+  end
+end
+
+def make_teams
+  DATA[:teams].each do |team|
+    new_team = Team.new
+    team.each_with_index do |team, i|
+      new_team.send(DATA[:team_keys][i] + "=", attribute)
+    end
+  end
+end
+
+main

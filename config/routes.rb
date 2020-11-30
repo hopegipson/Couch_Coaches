@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root 'application#home'
-  resources :players, only: [:index, :show]
+  resources :players
   resources :users, only: [:index, :new, :show] do
     resources :teams, only: [:show, :index, :new]
   end
   resources :teams
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
+
   post '/logout', to: 'sessions#destroy', as: 'logout'
   get '/search' => 'search#index', :as => 'search'
 

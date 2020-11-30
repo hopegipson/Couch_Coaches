@@ -25,6 +25,9 @@ gem 'rubocop'
 gem 'rubocop-rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'turbolinks', '~> 5'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

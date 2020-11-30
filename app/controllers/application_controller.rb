@@ -12,5 +12,8 @@ class ApplicationController < ActionController::Base
   
     def home
       current_user
+      if current_user
+        @teams = @current_user.teams
+      end
     end
 end

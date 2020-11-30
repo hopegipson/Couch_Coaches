@@ -30,6 +30,7 @@ class TeamsController < ApplicationController
     end
 
     def show
+      current_user
         if params[:user_id]
             @user = User.find_by(id: params[:user_id])
             @team = @User.teams.find_by(id: params[:id])
