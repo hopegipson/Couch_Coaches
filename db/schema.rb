@@ -24,8 +24,19 @@ ActiveRecord::Schema.define(version: 2020_11_28_222830) do
   create_table "games", force: :cascade do |t|
     t.integer "winner_id"
     t.integer "loser_id"
-    t.integer "team1_total_score"
-    t.integer "team2_total_score"
+    t.integer "team1_total_score", default: 0
+    t.integer "team2_total_score", default: 0
+    t.integer "team1_player1_score", default: 0
+    t.integer "team1_player2_score", default: 0
+    t.integer "team1_player3_score", default: 0
+    t.integer "team1_player4_score", default: 0
+    t.integer "team1_player5_score", default: 0
+    t.integer "team2_player1_score", default: 0
+    t.integer "team2_player2_score", default: 0
+    t.integer "team2_player3_score", default: 0
+    t.integer "team2_player4_score", default: 0
+    t.integer "team2_player5_score", default: 0
+    t.boolean "scored", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

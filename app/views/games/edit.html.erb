@@ -1,3 +1,130 @@
-<h1> Game </h1>
-<h2> Home team:  <%= @game.home_team.name %>
-<h2> Visitor team:  <%= @game.visitor_team.name %>
+
+
+<h1> Week <%=@game.competition.game_week %> Matchup</h1>
+
+<div class="container">
+<div class="floatLeft">
+<table class="table table-hover">
+  <thead>
+  <tbody>
+  <tr class="table-active">
+  <td></td>
+    <th scope="row"><%=@home_team.name%></th>
+    <td></td>
+    <td></td>
+    </tbody>
+  </tr>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">Name</th>
+      <td>Position</td>
+      <td>Projected Points</td>
+      <td>Actual Points</td>
+      </tbody>
+    </tr>
+    <% @home_players.each_with_index do |player, index| %>
+    <tr>
+      <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
+      <th scope="col"><%= player.position %></th>
+      <th scope="col"><%= player.week_projection%> Points</th>
+      <th scope="col"><%= @game.send("team1_player#{index+1}_score")%> Points</th>
+
+      <% end %>
+    </tr>
+    <tr class="table-active">
+  <td>Total:</td>
+  <td></td>
+
+    <th scope="row"><%= @home_team.total_team_points %> Points </th>
+    <th scope="row"><%= @game.team1_total_score %> Points </th>
+
+    </tbody>
+  </tr>
+  </thead>
+</table> 
+</div>
+
+<div class="floatRight">
+<table class="table table-hover">
+  <thead>
+  <tbody>
+  <tr class="table-active">
+  <td></td>
+    <th scope="row"><%=@visitor_team.name%></th>
+    <td></td>
+    <td></td>
+
+    </tbody>
+  </tr>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">Name</th>
+      <td>Position</td>
+      <td>Projected Points</td>
+      <td>Actual Points</td>
+
+      </tbody>
+    </tr>
+    <% @visitor_players.each_with_index do |player, index| %>
+    <tr>
+    
+      <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
+      <th scope="col"><%= player.position %></th>
+      <th scope="col"><%= player.week_projection%> Points</th>
+      <th scope="col"><%= @game.send("team2_player#{index+1}_score")%> Points</th>
+
+
+      <% end %>
+
+    </tr>
+    <tr class="table-active">
+  <td>Total:</td>
+  <td></td>
+
+
+    <th scope="row"><%= @visitor_team.total_team_points %> Points </th>
+    <th scope="row"><%= @game.team2_total_score %> Points </th>
+
+    </tbody>
+  </tr>
+  </thead>
+</table> 
+</div>
+</div>
+
+<div style="position: relative; width: 600px; height: 600px;">    
+
+    <div style="position: absolute; bottom: 5px; ">
+<%= form_for @game do |f|%>
+    <p> <%=@home_team.name %> Scores </p>
+    <p>
+      <%= f.label :team1_player1_score, "#{@home_team.players[0].name} " %>
+      <%= f.number_field :team1_player1_score %>
+    </p>
+    <p>
+      <%= f.label :team1_player2_score, "#{@home_team.players[1].name} " %>
+      <%= f.number_field :team1_player2_score %>
+    </p>
+    <p> <%=@visitor_team.name %> Scores </p>
+    <p>
+    <%= f.label :team2_player1_score, "#{@visitor_team.players[0].name} " %>
+    <%= f.number_field :team2_player1_score %>
+  </p>
+  <p>
+    <%= f.label :team2_player2_score, "#{@visitor_team.players[1].name} " %>
+    <%= f.number_field :team2_player2_score %>
+  </p>
+
+  <%= f.label :scored, "Check box if you are marking this game as scored" %>
+  <%= f.check_box :scored %> <br>
+
+
+  
+      <%= f.submit %>
+    <% end %>
+    </div>
+    </div>
+
+
+
+

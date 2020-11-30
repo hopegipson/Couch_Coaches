@@ -12,7 +12,8 @@ class CompetitionsController < ApplicationController
         @competition = Competition.create(competition_params)
         @competition.game = Game.new
         return redirect_to new_competition_path unless @competition.save
-        redirect_to competitions_path(@competition)
+        game = @competition.game
+        redirect_to game_path(game)
     end
 
     def show
