@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post '/logout', to: 'sessions#destroy', as: 'logout'
   get '/search' => 'search#index', :as => 'search'
+  resources :competitions
+  resources :games
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

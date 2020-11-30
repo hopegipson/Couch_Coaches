@@ -8,7 +8,7 @@
 
 <% if @player %>
   <div>
-    <%= @player.name %>
+    <%= link_to @player.name, player_path(@player) %>
     <%= @player.nfl_team %>
     <%= @player.projected_points %>
 
@@ -37,7 +37,7 @@
 
     <tr>
 
-      <th scope="col"><%= player.name %></th>
+      <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
       <th scope="col"><%= player.position %></th>
       <th scope="col"><%= player.nfl_team %></th>
       <th scope="col"><%= player.projected_points %> Points</th>

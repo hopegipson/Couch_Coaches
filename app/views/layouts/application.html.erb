@@ -31,6 +31,12 @@
         <li class="nav-item">
         <p class="nav-link"><%= link_to "My Teams", user_teams_path(current_user) %></p>
         </li>
+        <% if admin?%>
+        <li class="nav-item">
+        <p class="nav-link"><%= link_to "Create Matchup", user_teams_path(current_user) %></p>
+        </li>
+        <% end %>
+
 
         <li class="nav-item dropdown">
 

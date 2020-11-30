@@ -16,8 +16,10 @@ DATA = {
     ["Henry", "Seaton", "henry@gmail.com", "henryseaton", "password"],
     ["Cay", "Aldag", "cay@gmail.com", "cayaldag", "password"],
     ["Curtis", "Gipson", "curtis@gmail.com", "curtisgipson", "password"],
-    ["Coni", "Gipson", "hope@gmail.com", "hopegipson", "password"],
-  ],
+    ["Coni", "Gipson", "hope@gmail.com", "hopegipson", "password"]
+  ]}
+
+  DATA2 = {
   :team_keys =>
   ["name", "user_id"],
  :teams => [
@@ -28,17 +30,18 @@ DATA = {
    ["Mahomes Alone", 5],
    ["Party Like A Gronk Star", 6],
    ["View From Lamar", 2],
-   ["Little Red Fournette", 3],
- ],
+   ["Little Red Fournette", 3]
+ ]}
+ DATA3 = {
   :admins => [
-    "Hope Gipson",
+    "Hope Gipson"
   ]
 }
 
 def main
   make_users
-  make_admin
   make_teams
+  make_admin
 end
 
 def make_users
@@ -52,16 +55,16 @@ def make_users
 end
 
 def make_admin
-  DATA[:admins].each do |name|
-    User.create(name: name, admin: true, password: 'password')
+  DATA3[:admins].each do |name|
+    User.create(username: name, admin: true, password: 'password')
   end
 end
 
 def make_teams
-  DATA[:teams].each do |team|
+  DATA2[:teams].each do |team|
     new_team = Team.new
-    team.each_with_index do |team, i|
-      new_team.send(DATA[:team_keys][i] + "=", attribute)
+    team.each_with_index do |attribute, i|
+      new_team.send(DATA2[:team_keys][i] + "=", attribute)
     end
   end
 end

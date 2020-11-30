@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     helper_method :current_user
+    helper_method :admin?
 
     def current_user
       if session[:user_id]
@@ -15,5 +16,10 @@ class ApplicationController < ActionController::Base
       if current_user
         @teams = @current_user.teams
       end
+    end
+
+    def admin?
+      current_user
+      @current_user.admin
     end
 end

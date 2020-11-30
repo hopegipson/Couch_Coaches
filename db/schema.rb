@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_222830) do
     t.integer "team1_id"
     t.integer "team2_id"
     t.integer "game_id"
-    t.integer "team1_score"
-    t.integer "team2_score"
+    t.integer "game_week"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,6 +24,8 @@ ActiveRecord::Schema.define(version: 2020_11_28_222830) do
   create_table "games", force: :cascade do |t|
     t.integer "winner_id"
     t.integer "loser_id"
+    t.integer "team1_total_score"
+    t.integer "team2_total_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
