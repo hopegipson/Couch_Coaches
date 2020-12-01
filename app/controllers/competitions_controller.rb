@@ -1,11 +1,25 @@
 class CompetitionsController < ApplicationController
+    before_action :current_user
+
     def index
+        current_user
         @competitions = Competition.all
+        @competitions_week1 = Competition.where(game_week: 1)
+        @competitions_week2 = Competition.where(game_week: 2)
+        @competitions_week3 = Competition.where(game_week: 3)
+        @competitions_week4 = Competition.where(game_week: 4)
+        @competitions_week5 = Competition.where(game_week: 5)
       end
     
       def new
         @competition = Competition.new
       end
+
+      def edit
+        find_competition
+      end
+
+
 
  
       def create 
@@ -14,6 +28,13 @@ class CompetitionsController < ApplicationController
         return redirect_to new_competition_path unless @competition.save
         game = @competition.game
         redirect_to game_path(game)
+    end
+
+    def update
+        if current_user.admin
+        @competitoin.update(competition_params)
+        redirect_to competition_path(@competition)
+        end
     end
 
     def show
@@ -29,6 +50,7 @@ class CompetitionsController < ApplicationController
     def find_competition
         @competition = Competition.find_by(id: params[:id])
     end
+
 
 
 end

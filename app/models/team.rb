@@ -1,7 +1,8 @@
 class Team < ApplicationRecord
     has_many :competitions
-    #has_many :games,:through => :competitions
-    belongs_to :user
+    has_many :games,:through => :competitions
+    has_many :user_teams
+    has_many :users, :through => :user_teams
     has_many :players
     has_many :winning_games, :class_name => 'Game', :foreign_key => 'winner_id'
     has_many :losing_games, :class_name => 'Game', :foreign_key => 'loser_id'

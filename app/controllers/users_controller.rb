@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-    before_action :find_user, only: [:show]
+    before_action :find_user, only: [:show, :edit, :update, :destroy]
+    before_action :current_user
+
 
     def new
         @user = User.new
@@ -17,10 +19,29 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
+        if @user.admin
+            @user.teams << Team.find_by(id: 1)
+        end
         return redirect_to new_user_path unless @user.save
         session[:user_id] = @user.id
         redirect_to user_path(@user)
     end
+
+    def edit
+    end
+
+    def update
+        @user.update(user_params)
+        redirect_to user_path(@user)
+    end
+
+    def destroy
+        @user.destroy
+        session[:user_id] = nil
+        redirect_to root_path
+    end
+
+    
 
     private
   

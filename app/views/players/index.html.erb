@@ -1,9 +1,49 @@
 <h1>NFL Players</h1>
-<% @players.each do |player| %>
-  <div>
-    <h2><%= player.name %></h2>
-    <p><%= player.nfl_team %></p>
-    <p><%= player.position %></p>
-    <p><%= player.projected_points %></p>
-  </div>
+
+<h3>Filter players:</h3>
+<%= form_tag("/players", method: "get") do %>
+  <%= select_tag "team", options_from_collection_for_select(@teams, "id", "name"), include_blank: true %>
+  <%= submit_tag "Filter" %>
 <% end %>
+<table class="table table-hover">
+
+  <thead>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">Name</th>
+      <td>Position</td>
+      <td>NFL TEAM</td>
+      <td>Projected Season Points</td>
+      <td>Fantasy Team</td>
+      <td>Add if available <td>
+
+      </tbody>
+
+
+    </tr>
+    <% @players.each do |player| %>
+
+    <tr>
+
+      <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
+      <th scope="col"><%= player.position %></th>
+      <th scope="col"><%= player.nfl_team %></th>
+      <th scope="col"><%= player.projected_points %> Points</th>
+      <% if player.team.name == "Free Agent" %>
+
+      <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
+
+      <th scope="col"><%= link_to "Add Player", edit_player_path(player)  %> </th>
+
+      <% else %>
+      <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
+
+      <% end %>
+
+      <% end %>
+
+    </tr>
+
+  </thead>
+ 
+</table> 

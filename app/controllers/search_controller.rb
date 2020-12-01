@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  before_action :current_user
+
   def index
     @players = Player.all
     player_name = params['player_name']

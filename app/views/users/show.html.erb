@@ -1,8 +1,73 @@
-<h1> First Name: <%= @user.first_name %></h1>
-<h1> Last Name: <%= @user.last_name %></h1>
+<br>
+<div class="jumbotron">
+<div class="row">
+<p><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="Trulli" style="padding: 10px; float:right;width:50px;height:60px;">
 
-<% if @user.admin %>
-    <h1>ADMIN</h1>
-<% end %>
-<%= link_to  "See players", players_path %>
-<%= button_to  "Log Out", logout_path, method: "post" %>
+  <h1 class="display-6">Your NFL Profile</h1>  
+  </div>
+  <% if @user.admin %>
+  <div class="row">
+  <h6  class="display-6" >Admin</h6>  
+  </div>
+  <% end %>
+
+  <center>
+
+  <div class="card border-success mb-3" style="max-width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title"><%= @user.first_name %></h4>
+    <h4 class="card-title"><%= @user.last_name %></h4>
+
+
+    <p class="card-text">_________________________________ </p>
+  </div>
+
+</center>
+
+<table class="table table-hover">
+
+  <thead>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">Teams</th>
+      <td>Wins</td>
+      <td>Losses</td>
+
+      </tbody>
+
+
+    </tr>
+    <% @user.teams.each do |team| %>
+
+    <tr>
+      <th scope="col"><%= link_to "#{team.name}", user_team_path(team)  %></th>
+      <th scope="col"><%= team.winning_games.count %></th>
+      <th scope="col"><%= team.losing_games.count %></th>
+ 
+
+      <% end %>
+
+    </tr>
+
+  </thead>
+ 
+</table> 
+<center>
+<h6><%= link_to "Edit Profile", edit_user_path %>  </h6>
+
+</center>  
+</div>
+<center>
+<%= button_to  "Delete Profile", user_path, method: "delete", class: "btn btn-outline-success" %>
+</center>
+
+  <p class="lead">
+
+  </p>
+  <hr class="my-4">
+  <p>© 2020 NFL Enterprises LLC. NFL and the NFL shield design are registered trademarks of the National Football League. The team names, logos and uniform designs are registered trademarks of the teams indicated. All other NFL-related trademarks are trademarks of the National Football League. NFL footage © NFL Productions LLC.
+
+  </p>
+ 
+ 
+</div>

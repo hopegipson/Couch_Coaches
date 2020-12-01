@@ -1,4 +1,5 @@
-<h2>Search for nfl players to add to your team</h2>
+<h2>Search for NFL players to add to your team:</h2>
+<br>
 
 <%= form_with(url: search_path, method: "get", local: true) do %>
   <%= label_tag(:player_name, "Enter Player name:") %>
@@ -8,13 +9,11 @@
 
 <% if @player %>
   <div>
-    <%= link_to @player.name, player_path(@player) %>
-    <%= @player.nfl_team %>
-    <%= @player.projected_points %>
+    <%= link_to @player.name, player_path(@player) %> found and added to database
+
 
   </div>
 <% end %>
-
 
 
 <table class="table table-hover">
@@ -41,13 +40,14 @@
       <th scope="col"><%= player.position %></th>
       <th scope="col"><%= player.nfl_team %></th>
       <th scope="col"><%= player.projected_points %> Points</th>
-      <% if player.team == nil %>
+      <% if player.team.name == "Free Agent" %>
 
-      <th scope="col">Free Agent</th>
-      <th scope="col">Add to Team</th>
+      <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
+
+      <th scope="col"><%= link_to "Add Player", edit_player_path(player)  %> </th>
 
       <% else %>
-      <th scope="col"><%= player.team.name %> </th>
+      <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
 
       <% end %>
 

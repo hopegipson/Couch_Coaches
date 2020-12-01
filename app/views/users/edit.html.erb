@@ -1,0 +1,15 @@
+<%= form_for @user do |f| %>
+    <%= f.label  "First Name" %> <br>
+    <%= f.text_field :first_name %> <br>
+    <%= f.label "Name" %> <br>
+    <%= f.text_field :last_name %> <br>
+    <%= f.label "Email" %> <br>
+    <%= f.text_field :email %> <br>
+    <%= f.label  "Username" %> <br>
+    <%= f.text_field :username %> <br>
+    <%= f.label  "password" %> <br>
+    <%= f.password_field :password %> <br>
+    <%= f.label :admin, "Check box if you are a theme park owner" %>
+    <%= f.check_box :admin %> <br>
+    <%= f.submit "Create User" %>
+    <% end %>

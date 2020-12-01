@@ -26,6 +26,11 @@ class Player < ApplicationRecord
         self.projected_points / 17
     end
 
+    private
+    def self.by_team(team_id)
+        where(team: team_id)
+      end
+
 
 
 end

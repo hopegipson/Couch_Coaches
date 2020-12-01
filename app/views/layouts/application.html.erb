@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
 
-    <% if current_user%>
+    <% if @current_user%>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <p class="nav-brand"><%= link_to "Home", root_path %></p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,59 +23,65 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <p class="nav-link"><%= link_to "League", teams_path %></p>
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
         <li class="nav-item">
-        <p class="nav-link"><%= link_to "Account", user_path(current_user) %></p>
+        <p class="nav-link"><%= link_to "Account", user_path(@current_user) %></p>
         </li>
-        <li class="nav-item">
-        <p class="nav-link"><%= link_to "My Teams", user_teams_path(current_user) %></p>
-        </li>
-        <% if admin?%>
-        <li class="nav-item">
-        <p class="nav-link"><%= link_to "Create Matchup", new_competition_path %></p>
-        </li>
-        <% end %>
 
-
+      
         <li class="nav-item dropdown">
-
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Teams</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Team</a>
         <div class="dropdown-menu">
-        <p class="dropdown-item"><%= link_to "Search for Player", search_path %></p>
-        <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+
+        <p class="dropdown-item"><%= link_to "All Teams", teams_path %></p>
+        <p class="dropdown-item"><%= link_to "My Teams", user_teams_path(@current_user) %></p>
+
+        <% if @user_teams %>
+        <% @user_teams.each do |team| %>
+        <p class="dropdown-item"><%= link_to "#{team.name}", team_path(team) %></p>
+          <% end %>
+          <% end %>
+
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+          <p class="dropdown-item"><%= link_to "New Team", new_user_team_path(@current_user) %></p>
         </div>
       </li>
-        <li class="nav-item">
-        <p class="nav-link"><%= link_to "New Team", new_user_team_path(current_user) %></p>
-        </li>
-        <li class="nav-item">
-        <p class="nav-link"><%= link_to "Log Out", logout_path, method: "post" %>
-
-      </p>
-        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Players</a>
           <div class="dropdown-menu">
             <p class="dropdown-item"><%= link_to "Search for Player", search_path %></p>
 
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <p class="dropdown-item"><%= link_to "Players", players_path %></p>
+            <p class="dropdown-item"><%= link_to "My Players", search_path %></p>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Matchups</a>
+          <div class="dropdown-menu">
+            <p class="dropdown-item"></p>
+
+            <p class="dropdown-item"><%= link_to "All Matchups", competitions_path %></p>
+            <% if admin?%>
+            <p class="dropdown-item"><%= link_to "Create Matchup", new_competition_path %></p>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+
+
+        <li class="nav-item">
+        <a class="nav-link">  <%= button_to  "Log Out", logout_path, method: "post", class: "btn btn-outline-success"  %>
+      </a>
         </li>
       </ul>
     </div>
   </nav>
   <% end %>
-  <% if !current_user%>
+  <% if !@current_user%>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <p class="nav-brand"><%= link_to "Home", root_path %></p>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,12 +120,13 @@
 
   <% end %>
 
-
-
   <!-- content -->
   <div class="container"  role="main">
     <%= yield %>
   </div>
+
+
 </body>
 </html>
+
 

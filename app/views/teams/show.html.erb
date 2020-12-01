@@ -1,6 +1,7 @@
 <h1> Name: <%= @team.name %></h1>
-<h1> Owner: <%= @team.user.username %></h1>
-<h1><%= @current_user.first_name %></h1>
+<h1> Owner: <% @team.users.each do |user| %>
+ <%= user.username %></h1>
+ <% end %>
 
   <div>
   <% if @team.players %>
@@ -10,6 +11,9 @@
     <%= player.nfl_team %>
     <%= player.projected_points %>
     <% end %>
-    no players
+
+    <% if @team.players == nil %>
+    <h1> This team has no players </h1>
+    <% end %>
   </div>
 <% end %>

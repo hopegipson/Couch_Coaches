@@ -5,7 +5,7 @@
 <h1> Fantasy Team: <%= @player.team.name %></h1>
 
 
-<%= button_to  "Add Player ", edit_player_path %>
+<%= button_to  "Add Player", edit_player_path, method: "get", class: "btn btn-outline-success"  %>
 <%= button_to  "Release Player ", edit_player_path %>
 
 

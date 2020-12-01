@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     def current_user
       if session[:user_id]
         @current_user ||= User.find(session[:user_id])
+        @user_teams = @current_user.teams
       else
         @current_user = nil
       end
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
     def home
       current_user
       if current_user
-        @teams = @current_user.teams
+        @user_teams = @current_user.teams
       end
     end
 

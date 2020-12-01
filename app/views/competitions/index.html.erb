@@ -1,0 +1,31 @@
+<br>
+<% 5.times do |i| %>
+<h1>Competitions Week <%= "#{i+1}" %></h1>
+<table class="table table-hover">
+<thead>
+<tbody>
+  <tr class="table-active">
+    <th scope="row">Game</th>
+    <td>Home Team</td>
+    <td>Visitor Team</td>
+    <td>Winner </td>
+    <td> </td>
+    </tbody>
+  </tr>
+  <% @variable =instance_variable_get("@competitions_week#{i+1}")%>
+  <% @variable.each_with_index do |competition, index| %>
+  <tr>
+    <th scope="col"><%= link_to "Game #{index+1} ", game_path(competition.game) %></th>
+    <th scope="col"><%= competition.home_team.name %></th>
+    <th scope="col"><%= competition.visitor_team.name %></th>
+    <th scope="col"><%= competition.game.winner_id %></th>
+    <% if @current_user.admin %>
+    <th scope="col"><%= link_to "Edit Competition", edit_competition_path(competition) %> </th>
+    <% end %>
+
+<% end %>
+  </tr>
+</thead>
+</table> 
+
+<% end %>

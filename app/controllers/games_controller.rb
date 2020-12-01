@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_action :current_user
+
     def index
         @games = Game.all
       end

@@ -5,7 +5,7 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
       t.string :position
       t.string :nfl_team
       t.integer :projected_points
-      t.integer :team_id
+      t.integer :team_id, :default => 0
       #t.integer :week1_points, :default => 0
      # t.integer :week2_points, :default => 0
       #t.integer :week3_points,  :default => 0

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   root 'application#home'
   resources :players
-  resources :users, only: [:index, :new, :show] do
-    resources :teams, only: [:show, :index, :new]
+  resources :users do
+    resources :teams, only: [:index, :show, :new, :create]
   end
+
+
+
   resources :teams
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'

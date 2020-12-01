@@ -1,17 +1,25 @@
 class PlayersController < ApplicationController
     before_action :find_player, only: [:show, :edit, :update]
+    before_action :current_user
+
 
     def index
         @players = Player.all
-        current_user
+        @teams = Team.all
+   
+        # filter the @posts list based on user input
+        if !params[:team].blank?
+          @players = Player.by_team(params[:team])
+        else
+          # if no filters are applied, show all posts
+          @players = Player.all
+        end
     end
 
     def show
-        current_user
     end
 
     def edit
-        current_user
     end
 
     def update
