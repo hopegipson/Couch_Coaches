@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
 
   resources :teams
+  get '/players/:id/release', to: 'players#release'
+
+
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
 

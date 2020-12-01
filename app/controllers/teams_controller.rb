@@ -35,11 +35,6 @@ class TeamsController < ApplicationController
 
     def show
       find_team
-       # if params[:user_id]
-        #    @team = User.find(params[:user_id]).teams.find(params[:id])
-        #  else
-          #  @team = Team.find(params[:id])
-       #   end
     end
 
 

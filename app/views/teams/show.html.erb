@@ -1,19 +1,67 @@
-<h1> Name: <%= @team.name %></h1>
 <h1> Owner: <% @team.users.each do |user| %>
- <%= user.username %></h1>
+  <div class="jumbotron">
+  <h1 class="display-3"> <%= @team.name %></h1>
+  <p class="lead">This season has already been an epic ride for <%= @team.name%> a bold team who already has <%= @team.winning_games.count%> wins and bravely fought but succumbed to <%= @team.losing_games.count%> losses at the hands of other league teams.   </p>
+  <div class="card border-success mb-3" style="max-width: 20rem;">
+  <div class="card-body">
+  <h4 class="card-title"> Team Owner:</h4>
+
+    <h4 class="card-title"><%=  link_to "#{user.full_name}", user_path(user) %></h4>
+
+  </div>
+  </div>
+
+</h1>
  <% end %>
 
   <div>
-  <% if @team.players %>
+  <h1> Players:</h1>
+  
 
+   
+  </div>    
+<% if @team.players %>
+
+<table class="table table-hover">
+
+  <thead>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row"> Name</th>
+      <td>Position</td>
+      <td>NFL TEAM</td>
+      <td>Projected Season Points</td>
+      <td>Release<td>
+
+      </tbody>
+
+
+    </tr>
     <% @team.players.each do |player| %>
-    <%= player.name %>
-    <%= player.nfl_team %>
-    <%= player.projected_points %>
-    <% end %>
 
-    <% if @team.players == nil %>
-    <h1> This team has no players </h1>
-    <% end %>
-  </div>
+    <tr>
+
+      <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
+      <th scope="col"><%= player.position %></th>
+      <th scope="col"><%= player.nfl_team %></th>
+      <th scope="col"><%= player.projected_points %> Points</th>
+      <% if @team.users.include?(@current_user) %>
+
+      <th scope="col"><%= link_to "Release Player", release_player_path(player)  %> </th>
+      <% end %>
+
+      <% end %>
+
+    </tr>
+
+  </thead>
+ 
+</table> 
+<% end %>
+<% if @team.players == nil %>
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">THIS TEAM HAS NO PLAYERS</h4>
+  <p class="mb-0">To be able to set a lineup for your next matchup, you need to go add some players.</a>.</p>
+</div>
 <% end %>

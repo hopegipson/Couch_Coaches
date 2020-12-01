@@ -15,4 +15,8 @@ class Team < ApplicationRecord
         total
     end
 
+    def self.all_except(team)
+        where.not(id: team)
+      end
+
 end

@@ -53,14 +53,22 @@
  
 </table> 
 <center>
+
+
+
+<% if @current_user != nil && @user.id == @current_user.id %>
 <h6><%= link_to "Edit Profile", edit_user_path %>  </h6>
+<% end %>
 
 </center>  
 </div>
 <center>
-<%= button_to  "Delete Profile", user_path, method: "delete", class: "btn btn-outline-success" %>
-</center>
+<% if @current_user != nil && @user.id == @current_user.id %>
 
+<%= button_to  "Delete Profile", user_path, method: "delete", class: "btn btn-outline-success" %>
+<% end %>
+
+</center>
   <p class="lead">
 
   </p>

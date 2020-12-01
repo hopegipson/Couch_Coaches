@@ -9,9 +9,9 @@
     <h1> Fantasy Team: None so far, Free Agent </h1>
     <% end %>
 
+
 <%= form_for @player do |f|%>
     <%= f.label "Select a team to add this player to:"%>
-    <%= f.collection_select :team_id,  @current_user.teams, :id, :name, :include_blank => true %>
+    <%= f.collection_select :team_id,  @current_user.teams.all_except(@free_agent_team), :id, :name, :include_blank => true %>
     <%= f.submit "Add Player" %>
 <% end %>
-

@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
-    before_action :find_player, only: [:show, :edit, :update]
+    before_action :find_player, only: [:show, :edit, :update, :release]
     before_action :current_user
+    before_action :free_agent_team, only: [:update, :release, :edit]
 
 
     def index
@@ -22,6 +23,9 @@ class PlayersController < ApplicationController
     def edit
     end
 
+    def release
+    end
+
     def update
         @player.update(player_params)
         redirect_to player_path(@player)
@@ -35,6 +39,10 @@ class PlayersController < ApplicationController
 
     def player_params
         params.require(:player).permit(:team_id)
+    end
+
+    def free_agent_team
+        @free_agent_team = Team.find_by(name: "Free Agent")
     end
 
 end

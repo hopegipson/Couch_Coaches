@@ -1,8 +1,31 @@
 <h1>LEAGUE TEAMS</h1>
-<% @teams.each do |team| %>
-  <div>
-  <h3><%= link_to team.name, team_path(team) %></h3>
-  </div>
-<% end %>
-<h3><%= link_to "Create a Team", new_team_path %> </h3>
 
+
+<table class="table table-hover">
+
+  <thead>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">Team Name</th>
+      <td>Team User</td>
+
+
+      </tbody>
+
+
+    </tr>
+    <% @teams.each do |team| %>
+    <tr>
+
+      <th scope="col"><%= link_to "#{team.name}", team_path(team)  %></th>
+      <% team.users.each do |user| %>
+      <th scope="col"><%= link_to "#{user.username}", user_path(user)  %></th>
+      <% end %>
+      <% end %>
+      
+    </tr>
+
+  </thead>
+ 
+</table> 
+<h3><%= link_to "Create a Team", new_team_path %> </h3>

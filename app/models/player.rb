@@ -31,6 +31,10 @@ class Player < ApplicationRecord
         where(team: team_id)
       end
 
+      def self.all_except(player)
+        where.not(id: player)
+      end
+
 
 
 end

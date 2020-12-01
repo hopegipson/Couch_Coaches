@@ -1,0 +1,17 @@
+<h1>Release from Team</h1>
+<h1> Name: <%= @player.name %></h1>
+<h1> Position: <%= @player.position%></h1>
+<h1> NFL TEAM: <%= @player.nfl_team %></h1>
+<h1> Projected Season Points: <%= @player.projected_points %></h1>
+<% if @player.team %>
+    <h1> Fantasy Team: <%= @player.team.name %></h1>
+    <% else %>
+    <h1> Fantasy Team: None so far, Free Agent </h1>
+    <% end %>
+
+    <%= form_for @player do |f|%>
+        <%= f.label "To release, add player to free agency:"%>
+        <%= f.collection_select :team_id,  @current_user.teams, :id, :name, :include_blank => true %>
+        <%= f.submit "Release Player" %>
+    <% end %>
+
