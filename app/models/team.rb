@@ -1,4 +1,5 @@
 class Team < ApplicationRecord
+    validates :name, uniqueness: true
     has_many :competitions
     has_many :games,:through => :competitions
     has_many :user_teams

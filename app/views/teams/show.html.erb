@@ -1,7 +1,9 @@
-<h1> Owner: <% @team.users.each do |user| %>
-  <div class="jumbotron">
+<br>  
+<div class="jumbotron">
   <h1 class="display-3"> <%= @team.name %></h1>
   <p class="lead">This season has already been an epic ride for <%= @team.name%> a bold team who already has <%= @team.winning_games.count%> wins and bravely fought but succumbed to <%= @team.losing_games.count%> losses at the hands of other league teams.   </p>
+<h1> Owner: <% @team.users.each do |user| %>
+
   <div class="card border-success mb-3" style="max-width: 20rem;">
   <div class="card-body">
   <h4 class="card-title"> Team Owner:</h4>

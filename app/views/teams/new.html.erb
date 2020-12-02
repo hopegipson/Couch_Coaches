@@ -1,18 +1,3 @@
-<%= form_for (@team) do |f|%>
-    <br>
-    <%= user_id_field(@team) %>
-
-  <%= f.label :name %>
-      <%= f.text_field :name %>
-    </p>
-
-    </p>
-      <%= f.submit %>
-    <% end %>
-
-    <%= params[:user_id] %>
-    <%= @current_user.id %>
-
-
-
+<h1> Create a Team </h1>
+<%= render 'form' %>
 

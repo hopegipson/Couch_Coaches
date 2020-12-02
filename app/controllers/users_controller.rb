@@ -38,6 +38,15 @@ class UsersController < ApplicationController
     end
 
     def destroy
+        @user.teams.each do |team|
+            if team.users.count == 1
+                team.players.each do |player|
+                     player.team_id = 1
+                     player.save
+                end
+                team.destroy
+            end
+        end
         @user.destroy
         session[:user_id] = nil
         redirect_to root_path

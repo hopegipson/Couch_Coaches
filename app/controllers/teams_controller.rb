@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-    before_action :find_team, only: [:show, :create, :matchup]
+    before_action :find_team, only: [:show, :create, :matchup, :edit, :update, :destroy]
     before_action :current_user
     before_action :free_agent_team
     before_action :find_competitions, only: [:matchup]
@@ -38,6 +38,25 @@ class TeamsController < ApplicationController
         @team.users << User.find_by(id: team_params[:user_id])
         return redirect_to new_team_path unless @team.save
         redirect_to team_path(@team)
+    end
+
+    def edit
+      if @team.users.exclude?(@current_user)
+        redirect_to teams_path
+      end
+    end
+
+    def update
+        @team.update(team_params)
+        redirect_to team_path(@team)
+    end
+
+    def destroy
+        if @team.users.exclude?(@current_user)
+          redirect_to teams_path
+        end
+        @team.destroy
+        redirect_to teams_path
     end
 
     def show
