@@ -1,6 +1,8 @@
 class TeamsController < ApplicationController
-    before_action :find_team, only: [:show, :create]
+    before_action :find_team, only: [:show, :create, :matchup]
     before_action :current_user
+    before_action :free_agent_team
+    before_action :find_competitions, only: [:matchup]
 
 
     def index
@@ -12,6 +14,8 @@ class TeamsController < ApplicationController
     end
       
     def new
+      #admin_check_teams(@current_user)
+       # byebug
        if params[:user_id] && !User.exists?(params[:user_id])
        redirect_to users_path, alert: "User not found."
        else
@@ -22,6 +26,9 @@ class TeamsController < ApplicationController
           @team.user_ids << params[:user_id]
           @team
       end
+    end
+
+    def matchup
     end
        
     end
@@ -34,6 +41,7 @@ class TeamsController < ApplicationController
     end
 
     def show
+
       find_team
     end
 
@@ -47,6 +55,20 @@ class TeamsController < ApplicationController
     def team_params
         params.require(:team).permit(:name, :user_id)
     end
+
+    def find_competitions
+      @competitions = Competition.home(@team).or(Competition.visitor(@team))
+    end
+
+    #def admin_check_teams(user)
+    #  if user.teams.count == 1
+    #       errors.add(:base, "You cannot add another team as an admin")
+    #      end
+  #end
+
+  #  def free_agent_team
+   #   @free_agent_team = Team.find_by(name: "Free Agent")
+  #end
 
 
 

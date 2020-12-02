@@ -14,7 +14,7 @@
 
 
     </tr>
-    <% @teams.each do |team| %>
+    <% @teams.all_except(@free_agent_team).each do |team| %>
     <tr>
 
       <th scope="col"><%= link_to "#{team.name}", team_path(team)  %></th>

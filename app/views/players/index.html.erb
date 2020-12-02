@@ -31,7 +31,7 @@
       <th scope="col"><%= player.projected_points %> Points</th>
       <% if player.team.name == "Free Agent" %>
 
-      <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
+      <th scope="col"><%=  "#{player.team.name}" %> </th>
 
       <th scope="col"><%= link_to "Add Player", edit_player_path(player)  %> </th>
 

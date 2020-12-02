@@ -16,12 +16,8 @@
 
   <div>
   <h1> Players:</h1>
-  
-
-   
   </div>    
 <% if @team.players %>
-
 <table class="table table-hover">
 
   <thead>
@@ -40,14 +36,13 @@
     <% @team.players.each do |player| %>
 
     <tr>
-
       <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
       <th scope="col"><%= player.position %></th>
       <th scope="col"><%= player.nfl_team %></th>
       <th scope="col"><%= player.projected_points %> Points</th>
       <% if @team.users.include?(@current_user) %>
 
-      <th scope="col"><%= link_to "Release Player", release_player_path(player)  %> </th>
+      <th scope="col"><%= link_to "Release Player", release_path(player)  %> </th>
       <% end %>
 
       <% end %>

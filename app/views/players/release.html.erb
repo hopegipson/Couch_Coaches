@@ -11,7 +11,7 @@
 
     <%= form_for @player do |f|%>
         <%= f.label "To release, add player to free agency:"%>
-        <%= f.collection_select :team_id,  @current_user.teams, :id, :name, :include_blank => true %>
+        <%= f.collection_select :team_id,  Team.all, :id, :name, :include_blank => true %>
         <%= f.submit "Release Player" %>
     <% end %>
 

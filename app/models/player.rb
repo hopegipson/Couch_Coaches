@@ -1,5 +1,7 @@
 class Player < ApplicationRecord
     belongs_to :team
+    #scope :free agent, -> { where("player.team.name == Free Agent") }
+
 
 
     def self.find_by_name(name)

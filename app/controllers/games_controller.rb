@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
   before_action :current_user
+  before_action :free_agent_team
+
 
     def index
         @games = Game.all

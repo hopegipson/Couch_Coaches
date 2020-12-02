@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     helper_method :current_user
     helper_method :admin?
+    helper_method :free_agent_team
 
     def current_user
       if session[:user_id]
@@ -14,6 +15,7 @@ class ApplicationController < ActionController::Base
   
     def home
       current_user
+      free_agent_team
       if current_user
         @user_teams = @current_user.teams
       end
@@ -23,4 +25,9 @@ class ApplicationController < ActionController::Base
       current_user
       @current_user.admin
     end
+
+    def free_agent_team
+      @free_agent_team = Team.find_by(name: "Free Agent")
+  end
+
 end

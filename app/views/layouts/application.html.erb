@@ -38,10 +38,11 @@
         <div class="dropdown-menu">
 
         <p class="dropdown-item"><%= link_to "All Teams", teams_path %></p>
+        <% if @current_user.admin == false %>
         <p class="dropdown-item"><%= link_to "My Teams", user_teams_path(@current_user) %></p>
-
+        <% end %>
         <% if @user_teams %>
-        <% @user_teams.each do |team| %>
+        <% @user_teams.all_except(@free_agent_team).each do |team| %>
         <p class="dropdown-item"><%= link_to "#{team.name}", team_path(team) %></p>
           <% end %>
           <% end %>
@@ -56,25 +57,25 @@
           <div class="dropdown-menu">
             <p class="dropdown-item"><%= link_to "Search for Player", search_path %></p>
 
-            <p class="dropdown-item"><%= link_to "Players", players_path %></p>
-            <p class="dropdown-item"><%= link_to "My Players", search_path %></p>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
+            <p class="dropdown-item"><%= link_to "All Players", players_path %></p>
+
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Matchups</a>
           <div class="dropdown-menu">
-            <p class="dropdown-item"></p>
 
             <p class="dropdown-item"><%= link_to "All Matchups", competitions_path %></p>
+            <% if @user_teams %>
+            <% @user_teams.all_except(@free_agent_team).each do |team| %>
+            <p class="dropdown-item"><%= link_to "#{team.name} Matchups", matchup_path(team) %></p>
+              <% end %>
+              <% end %>
+
             <% if admin?%>
             <p class="dropdown-item"><%= link_to "Create Matchup", new_competition_path %></p>
             <% end %>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
+
         </li>
 
 

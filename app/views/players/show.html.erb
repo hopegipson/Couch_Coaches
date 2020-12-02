@@ -4,8 +4,12 @@
 <h1> Projected Season Points: <%= @player.projected_points %></h1>
 <h1> Fantasy Team: <%= @player.team.name %></h1>
 
-
+<% if @player.team.name == "Free Agent" %>
 <%= button_to  "Add Player", edit_player_path, method: "get", class: "btn btn-outline-success"  %>
-<%= button_to  "Release Player ", edit_player_path %>
+<% end %>
+
+<% if @current_user.teams.include?(@player.team) %>
+<%= button_to  "Release Player", release_path(@player), method: "get", class: "btn btn-outline-success"  %>
+<% end %>
 
 

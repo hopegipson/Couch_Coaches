@@ -1,5 +1,7 @@
 class CompetitionsController < ApplicationController
     before_action :current_user
+    before_action :free_agent_team
+    before_action :find_competition, only: [:show, :edit, :update, :destroy]
 
     def index
         current_user
@@ -12,11 +14,16 @@ class CompetitionsController < ApplicationController
       end
     
       def new
+        if admin? == false
+          redirect_to competitions_path
+        end 
         @competition = Competition.new
       end
 
       def edit
-        find_competition
+        if admin? == false
+          redirect_to competitions_path
+        end
       end
 
 
@@ -31,15 +38,20 @@ class CompetitionsController < ApplicationController
     end
 
     def update
-        if current_user.admin
-        @competitoin.update(competition_params)
+        if @current_user.admin
+        @competition.update(competition_params)
         redirect_to competition_path(@competition)
         end
     end
 
+
     def show
-        find_competition
     end
+
+    def destroy
+      @competition.destroy
+      redirect_to competitions_path
+  end
 
     private
 
@@ -50,6 +62,7 @@ class CompetitionsController < ApplicationController
     def find_competition
         @competition = Competition.find_by(id: params[:id])
     end
+
 
 
 

@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     resources :teams, only: [:index, :show, :new, :create]
   end
 
-
+  get '/teams/:id/matchup', to: 'teams#matchup', :as => 'matchup'
 
   resources :teams
-  get '/players/:id/release', to: 'players#release'
+  get '/players/:id/release', to: 'players#release', :as => 'release'
 
 
   get '/signin', to: 'sessions#new'

@@ -7,6 +7,7 @@ class Team < ApplicationRecord
     has_many :winning_games, :class_name => 'Game', :foreign_key => 'winner_id'
     has_many :losing_games, :class_name => 'Game', :foreign_key => 'loser_id'
 
+
     def total_team_points
         total = 0
         self.players.all.each do |player|
@@ -19,4 +20,5 @@ class Team < ApplicationRecord
         where.not(id: team)
       end
 
+   
 end
