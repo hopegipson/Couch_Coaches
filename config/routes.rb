@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   get '/teams/:id/matchup', to: 'teams#matchup', :as => 'matchup'
+  get '/auth/facebook/callback' => 'sessions#create_by_auth'
 
   resources :teams
   get '/players/:id/release', to: 'players#release', :as => 'release'

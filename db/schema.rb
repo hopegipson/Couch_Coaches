@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_225352) do
+ActiveRecord::Schema.define(version: 2020_12_02_083751) do
 
   create_table "competitions", force: :cascade do |t|
     t.integer "team1_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_225352) do
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
   end
 
 end

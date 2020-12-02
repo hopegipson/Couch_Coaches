@@ -26,6 +26,12 @@ gem 'rubocop-rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'turbolinks', '~> 5'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "devise"
+
+
+
 
 
 # Use Active Storage variant
