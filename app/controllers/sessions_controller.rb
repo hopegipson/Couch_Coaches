@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
         u.email = auth['info']['email']
         #u.image = auth['info']['image']
         u.password = Devise.friendly_token[0, 20]
-        u.username = u.last_name.prepend("#{u.first_name[0]}#{u.first_name[1]}#{u.first_name[2]}")
+        u.username = "#{u.first_name[0]}#{u.first_name[1]}#{u.first_name[2]}#{u.last_name}"
         end
         session[:user_id] = @user.id
 
