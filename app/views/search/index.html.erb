@@ -1,4 +1,7 @@
 <h2>Search for NFL players to add to your team:</h2>
+
+<p>Type in the name of a 2020 NFL player, if found they will be added to the available league players. </p>
+
 <br>
 
 <%= form_with(url: search_path, method: "get", local: true) do %>
@@ -26,7 +29,7 @@
       <td>NFL TEAM</td>
       <td>Projected Season Points</td>
       <td>Fantasy Team</td>
-      <td>Add if available <td>
+      <td>Add/release <td>
 
       </tbody>
 
@@ -49,6 +52,9 @@
       <% else %>
       <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
 
+      <% end %>
+      <% if @current_user.teams.include?(player.team)  %>
+      <th scope="col"><%= link_to "Release Player",  release_path(player)  %> </th>
       <% end %>
 
       <% end %>

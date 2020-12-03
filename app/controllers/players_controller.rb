@@ -7,12 +7,9 @@ class PlayersController < ApplicationController
     def index
         @players = Player.all
         @teams = Team.all
-   
-        # filter the @posts list based on user input
-        if !params[:team].blank?
+           if !params[:team].blank?
           @players = Player.by_team(params[:team])
         else
-          # if no filters are applied, show all posts
           @players = Player.all
         end
     end
@@ -21,18 +18,24 @@ class PlayersController < ApplicationController
     end
 
     def edit
-
+      if player_free_agent? == false
+        flash[:errors ]= ["You cannot add a player that is not a free agent or on your team"]
+        redirect_to players_path
+      end
     end
 
     def release
+     if player_belong_to_current_team? == false
+      flash[:errors ]= ["You cannot release a player that is not on your team"]
+      redirect_to players_path
+     end
+
     end
 
     def update
-         #need to add code that only if that player is a free agent can you add
-
         @team = Team.find_by(id: player_params[:team_id])
         if @team.players.count >= 5
-          #add some error here about too many players for that team
+          flash[:errors ]= ["This team already has the maximum 5 players, release a player to add"]
           redirect_to players_path
         else 
           @player.update(player_params)
@@ -43,8 +46,6 @@ class PlayersController < ApplicationController
     end
 
     def release_update
-        #need to add code that only if you have that player you can release
-        
         @player.team_id = 1
         @player.save
         redirect_to player_path(@player)
@@ -59,6 +60,15 @@ class PlayersController < ApplicationController
     def player_params
         params.require(:player).permit(:team_id)
     end
+
+    def player_belong_to_current_team?
+      @current_user.teams.include?(@player.team)
+    end
+
+    def player_free_agent?
+      @player.team_id == 1
+    end
+
 
 
 end

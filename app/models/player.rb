@@ -1,8 +1,5 @@
 class Player < ApplicationRecord
     belongs_to :team
-    #scope :free agent, -> { where("player.team.name == Free Agent") }
-
-
 
     def self.find_by_name(name)
         Player.all.find_by(name: name.titleize)
@@ -10,6 +7,7 @@ class Player < ApplicationRecord
 
     def self.create_from_api(name)
         @response = SportsData::Search.by_player(name)
+        if @response
         player = Player.new
         player.name = @response["Name"]
         player.nfl_team = @response["Team"]
@@ -18,6 +16,7 @@ class Player < ApplicationRecord
         player.team_id = 1
         player.save
         player
+        end
     end
 
     def self.find_or_create_from_api(name)

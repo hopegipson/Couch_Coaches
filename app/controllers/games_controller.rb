@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :current_user
   before_action :free_agent_team
+  before_action :find_game, only: [:show, :edit, :update, :release, :release_update]
 
 
     def index

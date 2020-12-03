@@ -4,7 +4,6 @@ class CompetitionsController < ApplicationController
     before_action :find_competition, only: [:show, :edit, :update, :destroy]
 
     def index
-        current_user
         @competitions = Competition.all
         @competitions_week1 = Competition.where(game_week: 1)
         @competitions_week2 = Competition.where(game_week: 2)
@@ -15,6 +14,7 @@ class CompetitionsController < ApplicationController
     
       def new
         if admin? == false
+          flash[:errors ]= ["Only admins can create matchups"]
           redirect_to competitions_path
         end 
         @competition = Competition.new
@@ -22,34 +22,39 @@ class CompetitionsController < ApplicationController
 
       def edit
         if admin? == false
+          flash[:errors ]= ["Only admins can edit matchups"]
           redirect_to competitions_path
         end
       end
-
-
-
  
       def create 
         @competition = Competition.create(competition_params)
         @competition.game = Game.new
-        return redirect_to new_competition_path unless @competition.save
-        game = @competition.game
-        redirect_to game_path(game)
-    end
+        if @competition.save
+          game = @competition.game
+          flash[:messages ]= ["Your matchup between #{@competition.home_team.name} and #{@competition.visitor_team.name} was successfully created"]
+          redirect_to game_path(game)
+        else
+         flash[:errors]= @competition.errors.full_messages
+          render :new
+        end
+      end
 
     def update
-        if @current_user.admin
         @competition.update(competition_params)
-        redirect_to competition_path(@competition)
+        if @competition.save
+          flash[:messages ]= ["Your matchup was successfully updated"]
+          redirect_to competitions_path
+        else
+          flash[:errors]= @competition.errors.full_messages
+          render :edit
         end
     end
 
 
-    def show
-    end
-
     def destroy
       @competition.destroy
+      flash[:messages ]= ["Your Matchup was successfully deleted"]
       redirect_to competitions_path
   end
 
@@ -62,8 +67,6 @@ class CompetitionsController < ApplicationController
     def find_competition
         @competition = Competition.find_by(id: params[:id])
     end
-
-
 
 
 end

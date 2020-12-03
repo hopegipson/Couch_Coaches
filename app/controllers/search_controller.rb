@@ -8,7 +8,13 @@ class SearchController < ApplicationController
     player_name = params['player_name']
      if player_name
       @player = Player.find_or_create_from_api("#{player_name}")
+      if !@player 
+        flash[:errors]= ["Error finding your submitted player name, please try another"]
+
+      else
+      
     end
+  end
   end
 
 end

@@ -110,11 +110,37 @@
       </li>
 </nav>
   <% end %>
+  <% if flash[:messages] %>
+
+<div class="alert alert-dismissible alert-info">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h4 class="alert-heading">Update:</h4>
+  <% flash[:messages].each do |message| %>
+    <p class="mb-0"><%= message %> </p>
+    <% end %>
+    <% end %>
+</div>
+<br>
+<% if flash[:errors] %>
+
+<div class="alert alert-dismissible alert-danger">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h4 class="alert-heading">Warning:</h4>
+  <% flash[:errors].each do |message| %>
+    <p class="mb-0"><%= message %> </p>
+    <% end %>
+    <% end %>
+</div>
+<br>
+
 
   <!-- content -->
   <div class="container"  role="main">
     <%= yield %>
   </div>
+
+ 
+
 
 
 </body>

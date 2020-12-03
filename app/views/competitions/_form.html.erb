@@ -1,12 +1,16 @@
 <%= form_for @competition do |f|%>
     <div class="form-group">
+    <div class="form-group row">
+
     <%= f.label "Select a home team:"%>
     <%= f.collection_select :team1_id,  Team.all_except(@free_agent_team), :id, :name, :include_blank => true %>
     <%= f.label "Select a visiting team:"%>
     <%= f.collection_select :team2_id,  Team.all_except(@free_agent_team), :id, :name, :include_blank => true %>
     </div>
+    </div>
+
     <%= f.label "Select a week to schedule the matchup:"%>
-    <%= f.select :game_week, (0..16) %>
+    <%= f.select :game_week, (1..5  ) %>
 
     <%= f.submit%>
 <% end %>

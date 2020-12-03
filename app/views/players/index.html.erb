@@ -1,4 +1,7 @@
 <h1>NFL Players</h1>
+<p>You can only add players that are free agents. You may only release players that are on one of your user teams.</p>
+
+<p class="text-danger"><%= @error %></p>
 
 <h3>Filter players:</h3>
 <%= form_tag("/players", method: "get") do %>
@@ -15,7 +18,8 @@
       <td>NFL TEAM</td>
       <td>Projected Season Points</td>
       <td>Fantasy Team</td>
-      <td>Add if available <td>
+      <td>Add/Release <td>
+
 
       </tbody>
 
@@ -30,17 +34,20 @@
       <th scope="col"><%= player.nfl_team %></th>
       <th scope="col"><%= player.projected_points %> Points</th>
       <% if player.team.name == "Free Agent" %>
-
       <th scope="col"><%=  "#{player.team.name}" %> </th>
-
       <th scope="col"><%= link_to "Add Player", edit_player_path(player)  %> </th>
-
       <% else %>
       <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
+      <% end %>
+
+      <% if @current_user.teams.include?(player.team)  %>
+      <th scope="col"><%= link_to "Release Player",  release_path(player)  %> </th>
+      <% end %>
+
 
       <% end %>
 
-      <% end %>
+
 
     </tr>
 
