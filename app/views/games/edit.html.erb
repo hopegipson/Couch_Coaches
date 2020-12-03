@@ -1,5 +1,6 @@
 
-
+<div class="jumbotron">
+<div class="row">
 <h1> Week <%=@game.competition.game_week %> Matchup</h1>
 
 <div class="container">
@@ -91,12 +92,17 @@
 </table> 
 </div>
 </div>
+</div>
+</div>
 
-<div style="position: relative; width: 600px; height: 600px;">    
+<div>
+<center>
 
-    <div style="position: absolute; bottom: 5px; ">
 <%= form_for @game do |f|%>
-    <p> <%=@home_team.name %> Scores </p>
+  <p> <%=@home_team.name %> Scores </p>
+
+  <div class="form-group row">
+
     <p>
       <%= f.label :team1_player1_score, "#{@home_team.players[0].name} " %>
       <%= f.number_field :team1_player1_score %>
@@ -105,7 +111,23 @@
       <%= f.label :team1_player2_score, "#{@home_team.players[1].name} " %>
       <%= f.number_field :team1_player2_score %>
     </p>
+    <p>
+      <%= f.label :team1_player3_score, "#{@home_team.players[2].name} " %>
+      <%= f.number_field :team1_player3_score %>
+    </p>
+    <p>
+      <%= f.label :team1_player4_score, "#{@home_team.players[3].name} " %>
+      <%= f.number_field :team1_player4_score %>
+    </p>
+    <p>
+      <%= f.label :team1_player5_score, "#{@home_team.players[4].name} " %>
+      <%= f.number_field :team1_player5_score %>
+    </p>
+    </div>
     <p> <%=@visitor_team.name %> Scores </p>
+
+    <div class="form-group row">
+
     <p>
     <%= f.label :team2_player1_score, "#{@visitor_team.players[0].name} " %>
     <%= f.number_field :team2_player1_score %>
@@ -114,6 +136,20 @@
     <%= f.label :team2_player2_score, "#{@visitor_team.players[1].name} " %>
     <%= f.number_field :team2_player2_score %>
   </p>
+  <p>
+    <%= f.label :team2_player3_score, "#{@visitor_team.players[2].name} " %>
+    <%= f.number_field :team2_player3_score %>
+  </p>
+  <p>
+    <%= f.label :team2_player4_score, "#{@visitor_team.players[3].name} " %>
+    <%= f.number_field :team2_player4_score %>
+  </p>
+  <p>
+    <%= f.label :team2_player5_score, "#{@visitor_team.players[4].name} " %>
+    <%= f.number_field :team2_player5_score %>
+  </p>
+  </div>
+
 
   <%= f.label :scored, "Check box if you are marking this game as scored" %>
   <%= f.check_box :scored %> <br>

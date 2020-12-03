@@ -1,3 +1,5 @@
+
+
 <h1>LEAGUE TEAMS</h1>
 
 
@@ -28,6 +30,8 @@
   </thead>
  
 </table> 
-<div class="alert alert-dismissible alert-secondary">
-<h3><%= link_to "Create a Team", new_team_path %> </h3>
+<% if admin? == false %>
+<div class= "btn btn-outline-success">
+<h6><%= link_to "Create a Team", new_user_team_path(@current_user) %> </h6>
 </div>
+<% end %>

@@ -1,4 +1,6 @@
 
+<div class="jumbotron">
+<div class="row">
 <h1> Week <%=@game.competition.game_week %> Matchup</h1>
 
 <div class="container">
@@ -71,8 +73,6 @@
       <th scope="col"><%= player.position %></th>
       <th scope="col"><%= player.week_projection%> Points</th>
       <th scope="col"><%= @game.send("team2_player#{index+1}_score")%> Points</th>
-
-
       <% end %>
 
     </tr>
@@ -92,20 +92,27 @@
 </div>
 
 
+<% if admin? %>
 
+<%= link_to  "Score Game: ", edit_game_path %>
 
+<% end %>
+</div>
+<br>
 <div style="position: relative; width: 600px; height: 400px;">    
 
-    <div style="position: absolute; bottom: 5px; ">
-    <h2> Winner: <%= @game.winner_id %> </h2>
-
-    <h2> Game Scored: <%= @game.scored %> </h2>
-    <% if admin? %>
-    <%= link_to  "Score Team 1", edit_game_path %>
-
-    <%= link_to  "Score Game", edit_game_path %>
-    
+    <% winner = Team.find_by(id: @game.winner_id) %>
+    <% if winner %>
+    <h2> Champion: <%= winner.name %> </h2>
     <% end %>
+    <% if @game.scored == false %>
+    <p class="text-danger">This game has not completed scoring</p>
+    <% elsif @game.scored == true %>
+    <p>This game has completed scoring</p>
+    <% end %>
+
+
+    
     </div>
 </div>
 

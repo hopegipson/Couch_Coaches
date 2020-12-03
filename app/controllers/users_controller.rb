@@ -14,9 +14,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        if !current_user
-            redirect_to root_path
-        end
     end
 
     def create
@@ -24,12 +21,21 @@ class UsersController < ApplicationController
         if @user.admin
             @user.teams << Team.find_by(id: 1)
         end
-        return redirect_to new_user_path unless @user.save
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        if @user.save 
+            session[:user_id] = @user.id
+            flash[:messages ]= ["User was successfully created."]
+            redirect_to user_path(@user)
+        else
+            flash[:errors]= @user.errors.full_messages
+            redirect_to new_user_path
+        end
     end
 
     def edit
+        if @user != @current_user
+            flash[:errors ]= ["You cannot edit another user"]
+            redirect_to teams_path
+          end
     end
 
     def update
@@ -49,6 +55,7 @@ class UsersController < ApplicationController
         end
         @user.destroy
         session[:user_id] = nil
+        flash[:messages ]= ["User successfully deleted."]
         redirect_to root_path
     end
 

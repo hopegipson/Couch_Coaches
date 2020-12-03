@@ -7,6 +7,8 @@ class Team < ApplicationRecord
     has_many :players
     has_many :winning_games, :class_name => 'Game', :foreign_key => 'winner_id'
     has_many :losing_games, :class_name => 'Game', :foreign_key => 'loser_id'
+    validates :name, presence: :true, uniqueness: :true
+
 
 
     def total_team_points

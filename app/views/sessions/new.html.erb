@@ -1,9 +1,13 @@
-<h1>Log in</h1>
-<%= link_to('Log in with Facebook!', '/auth/facebook') %>
+<br>    <h1>Log in</h1>
+
+<div class="jumbotron">
+<div class="row">
+<div class="column">
+<p> <i class="fa fa-facebook"></i> <%= link_to('Log in with Facebook!', '/auth/facebook') %></p>
 
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-    <%= label_tag "username"%>
-    <%= select_tag "user[username]", options_from_collection_for_select(@users, "id", "username")%> <br>
+    <%= label_tag "Username"%>
+    <%= text_field_tag "user[username]"%> <br>
     <%= label_tag "Password"%>
     <%= password_field_tag "user[password]"%> <br>
     <%= submit_tag "Sign In"%>

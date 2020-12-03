@@ -1,6 +1,5 @@
-<br>
-<p class="text-danger"><%= @error %></p>
-
+<div class="jumbotron">
+<div class="row">
 <% 5.times do |i| %>
 <h1>Competitions Week <%= "#{i+1}" %></h1>
 <table class="table table-hover">
@@ -11,6 +10,9 @@
     <td>Home Team</td>
     <td>Visitor Team</td>
     <td>Winner </td>
+ 
+
+
     <td> </td>
     </tbody>
   </tr>
@@ -20,8 +22,11 @@
     <th scope="col"><%= link_to "Game #{index+1} ", game_path(competition.game) %></th>
     <th scope="col"><%= competition.home_team.name %></th>
     <th scope="col"><%= competition.visitor_team.name %></th>
-    <th scope="col"><%= competition.game.winner_id %></th>
-    <% if @current_user.admin %>
+    <% winner = Team.find_by(id: competition.game.winner_id) %>
+    <% if winner %>
+    <th scope="col"><%= winner.name%></th>
+    <% end %>
+    <% if admin? %>
     <th scope="col"><%= link_to "Edit Competition", edit_competition_path(competition) %> </th>
     <% end %>
 

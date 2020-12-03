@@ -29,7 +29,11 @@
       <td>Position</td>
       <td>NFL TEAM</td>
       <td>Projected Season Points</td>
+
+      <% if @team.users.include?(@current_user) %>
       <td>Release<td>
+      <% end %>
+
 
       </tbody>
 
@@ -62,3 +66,16 @@
   <p class="mb-0">To be able to set a lineup for your next matchup, you need to go add some players.</a>.</p>
 </div>
 <% end %>
+<center>
+<% if @current_user.teams.include?(@team) %>
+<h6><%= link_to "Edit Team", edit_team_path %>  </h6>
+<% end %>
+</center>
+</div>
+
+<% if @current_user.teams.include?(@team) %>
+<center>
+<%= button_to  "Delete Team", team_path, method: "delete", class: "btn btn-outline-success" %>
+<% end %>
+
+</center>

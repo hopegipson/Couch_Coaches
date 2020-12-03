@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     end
 
     def create 
-        @user = User.find_by(id: params[:user][:username])
+        @user = User.find_by(username: params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
             redirect_to user_path(@user) 
@@ -21,7 +21,6 @@ class SessionsController < ApplicationController
         u.first_name = first_name_create(full_name)
         u.last_name = last_name_create(full_name)
         u.email = auth['info']['email']
-        #u.image = auth['info']['image']
         u.password = Devise.friendly_token[0, 20]
         u.username = "#{u.first_name[0]}#{u.first_name[1]}#{u.first_name[2]}#{u.last_name}"
         end

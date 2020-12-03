@@ -19,7 +19,5 @@ class Game < ApplicationRecord
             self.winner_id = self.visitor_team.id
             self.loser_id = self.home_team.id
         end
-    end            
-
-
+    end
 end

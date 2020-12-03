@@ -40,7 +40,7 @@
       <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
       <% end %>
 
-      <% if @current_user.teams.include?(player.team)  %>
+      <% if admin? == false && @current_user.teams.include?(player.team)  %>
       <th scope="col"><%= link_to "Release Player",  release_path(player)  %> </th>
       <% end %>
 

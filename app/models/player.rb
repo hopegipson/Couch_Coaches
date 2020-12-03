@@ -1,6 +1,7 @@
 class Player < ApplicationRecord
     belongs_to :team
 
+
     def self.find_by_name(name)
         Player.all.find_by(name: name.titleize)
     end
@@ -35,8 +36,6 @@ class Player < ApplicationRecord
       def self.all_except(player)
         where.not(id: player)
       end
-
-
 
 end
 

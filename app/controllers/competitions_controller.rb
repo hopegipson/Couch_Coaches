@@ -53,8 +53,9 @@ class CompetitionsController < ApplicationController
 
 
     def destroy
+      @competition.game.destroy
       @competition.destroy
-      flash[:messages ]= ["Your Matchup was successfully deleted"]
+      flash[:messages ]= [" Matchup was successfully deleted"]
       redirect_to competitions_path
   end
 
