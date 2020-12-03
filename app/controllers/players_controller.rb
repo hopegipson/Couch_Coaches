@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-    before_action :find_player, only: [:show, :edit, :update, :release]
+    before_action :find_player, only: [:show, :edit, :update, :release, :release_update]
     before_action :current_user
     before_action :free_agent_team
 
@@ -21,15 +21,34 @@ class PlayersController < ApplicationController
     end
 
     def edit
+
     end
 
     def release
     end
 
     def update
-        @player.update(player_params)
-        redirect_to player_path(@player)
+         #need to add code that only if that player is a free agent can you add
+
+        @team = Team.find_by(id: player_params[:team_id])
+        if @team.players.count >= 5
+          #add some error here about too many players for that team
+          redirect_to players_path
+        else 
+          @player.update(player_params)
+          redirect_to player_path(@player)
+        end
+
+ 
     end
+
+    def release_update
+        #need to add code that only if you have that player you can release
+        
+        @player.team_id = 1
+        @player.save
+        redirect_to player_path(@player)
+  end
 
     private
 
@@ -41,8 +60,5 @@ class PlayersController < ApplicationController
         params.require(:player).permit(:team_id)
     end
 
-  #  def free_agent_team
-   #     @free_agent_team = Team.find_by(name: "Free Agent")
-   # end
 
 end

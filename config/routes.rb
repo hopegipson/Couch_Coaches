@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :teams
   get '/players/:id/release', to: 'players#release', :as => 'release'
-
+  patch '/players/:id/release', to: 'players#release_update', :as => 'release_update'
 
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'

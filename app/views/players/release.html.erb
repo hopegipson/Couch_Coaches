@@ -9,9 +9,6 @@
     <h1> Fantasy Team: None so far, Free Agent </h1>
     <% end %>
 
-    <%= form_for @player do |f|%>
-        <%= f.label "To release, add player to free agency:"%>
-        <%= f.collection_select :team_id,  Team.all, :id, :name, :include_blank => true %>
-        <%= f.submit "Release Player" %>
-    <% end %>
+    <%= button_to  "Release Player", release_update_path, method: "patch", class: "btn btn-outline-success"  %>
 
+ 
