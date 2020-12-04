@@ -3,7 +3,6 @@ class Player < ApplicationRecord
     scope :filter_by_position, -> (position1) { where(position: position1)}
     validates :team_id, presence: :true
 
-
     def self.find_by_name(name)
         Player.all.find_by(name: name.titleize)
     end
@@ -11,14 +10,14 @@ class Player < ApplicationRecord
     def self.create_from_api(name)
         @response = SportsData::Search.by_player(name)
         if @response
-        player = Player.new
-        player.name = @response["Name"]
-        player.nfl_team = @response["Team"]
-        player.position = @response["Position"]
-        player.projected_points = @response["FantasyPoints"]
-        player.team_id = 1
-        player.save
-        player
+            player = Player.new
+            player.name = @response["Name"]
+            player.nfl_team = @response["Team"]
+            player.position = @response["Position"]
+            player.projected_points = @response["FantasyPoints"]
+            player.team_id = 1
+            player.save
+            player
         end
     end
 
@@ -31,13 +30,13 @@ class Player < ApplicationRecord
     end
 
     private
+
     def self.by_team(team_id)
         where(team: team_id)
-      end
+    end
 
-      def self.all_except(player)
+    def self.all_except(player)
         where.not(id: player)
-      end
-
+    end
 end
 

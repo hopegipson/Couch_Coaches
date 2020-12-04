@@ -29,7 +29,6 @@ class Competition < ApplicationRecord
       elsif c.visitor_team == visitor_team
         errors.add(:visitor_team, "is already scheduled for a week 1 matchup")
       end
+      end
     end
   end
-
-end

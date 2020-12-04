@@ -7,15 +7,10 @@ class User < ApplicationRecord
     validates :last_name, presence: :true
     validates :email, presence: :true
     scope :filter_by_admin, -> { where(admin: true) }
-
-
-
     validates :username, presence: :true, uniqueness: :true
     has_secure_password
 
     def full_name
         "#{self.first_name} #{self.last_name}".titleize
     end
-
-   
 end
