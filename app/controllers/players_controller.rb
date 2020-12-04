@@ -44,8 +44,8 @@ class PlayersController < ApplicationController
       if @team == nil
         flash[:errors ]= ["Must specify a team to add player to"]
         redirect_to edit_player_path(@player)
-      elsif @team.players.count == 5
-        flash[:errors ]= ["This team already has the maximum 5 players, release a player to add"]
+      elsif @team.players.count == 7
+        flash[:errors ]= ["This team already has the maximum (7) players, release a player to add"]
         redirect_to team_path(@team)
       elsif @team.full_roster_of_position(@position)
         message = @team.full_roster_of_position(@position)

@@ -123,6 +123,14 @@
       <%= f.label :team1_player5_score, "#{@home_team.players[4].name} " %>
       <%= f.number_field :team1_player5_score %>
     </p>
+    <p>
+    <%= f.label :team1_player6_score, "#{@home_team.players[5].name} " %>
+    <%= f.number_field :team1_player6_score %>
+  </p>
+  <p>
+  <%= f.label :team1_player7_score, "#{@home_team.players[6].name} " %>
+  <%= f.number_field :team1_player7_score %>
+</p>
     </div>
     <p> <%=@visitor_team.name %> Scores </p>
 
@@ -148,6 +156,15 @@
     <%= f.label :team2_player5_score, "#{@visitor_team.players[4].name} " %>
     <%= f.number_field :team2_player5_score %>
   </p>
+  <p>
+  <%= f.label :team2_player6_score, "#{@visitor_team.players[5].name} " %>
+  <%= f.number_field :team2_player6_score %>
+</p>
+<p>
+<%= f.label :team2_player7_score, "#{@visitor_team.players[6].name} " %>
+<%= f.number_field :team2_player7_score %>
+</p>
+
   </div>
 
       <%= f.submit %>

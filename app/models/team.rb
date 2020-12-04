@@ -26,9 +26,9 @@ class Team < ApplicationRecord
     def full_roster_of_position(position)
         if position == "QB" && self.players.filter_by_position("QB").count == 1
             "This team already has the maximum number of Quarterbacks (1), release a QB to add one."
-        elsif position == "RB" && self.players.filter_by_position("RB").count == 1
+        elsif position == "RB" && self.players.filter_by_position("RB").count == 2
             "This team already has the maximum number of Running Backs (1), release a RB to add one."
-        elsif position == "WR" && self.players.filter_by_position("WR").count == 1
+        elsif position == "WR" && self.players.filter_by_position("WR").count == 2
             "This team already has the maximum number of Wide Receivers (1), release a WR to add one."
         elsif position == "TE" && self.players.filter_by_position("TE").count == 1
             "This team already has the maximum number of Tight Ends (1), release a TE to add one."

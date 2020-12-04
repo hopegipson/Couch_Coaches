@@ -31,11 +31,15 @@ ActiveRecord::Schema.define(version: 2020_12_02_083751) do
     t.integer "team1_player3_score", default: 0
     t.integer "team1_player4_score", default: 0
     t.integer "team1_player5_score", default: 0
+    t.integer "team1_player6_score", default: 0
+    t.integer "team1_player7_score", default: 0
     t.integer "team2_player1_score", default: 0
     t.integer "team2_player2_score", default: 0
     t.integer "team2_player3_score", default: 0
     t.integer "team2_player4_score", default: 0
     t.integer "team2_player5_score", default: 0
+    t.integer "team2_player6_score", default: 0
+    t.integer "team2_player7_score", default: 0
     t.boolean "scored", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

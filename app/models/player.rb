@@ -26,7 +26,7 @@ class Player < ApplicationRecord
     end
 
     def week_projection
-        self.projected_points / 17
+        self.projected_points / 16
     end
 
     private

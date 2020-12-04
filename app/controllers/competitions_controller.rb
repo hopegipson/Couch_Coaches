@@ -10,6 +10,17 @@ class CompetitionsController < ApplicationController
         @competitions_week3 = Competition.where(game_week: 3)
         @competitions_week4 = Competition.where(game_week: 4)
         @competitions_week5 = Competition.where(game_week: 5)
+        @competitions_week6 = Competition.where(game_week: 6)
+        @competitions_week7 = Competition.where(game_week: 7)
+        @competitions_week8 = Competition.where(game_week: 8)
+        @competitions_week9 = Competition.where(game_week: 9)
+        @competitions_week10 = Competition.where(game_week: 10)
+        @competitions_week11 = Competition.where(game_week: 11)
+        @competitions_week12 = Competition.where(game_week: 12)
+        @competitions_week13 = Competition.where(game_week: 13)
+        @competitions_week14 = Competition.where(game_week: 14)
+        @competitions_week15 = Competition.where(game_week: 15)
+        @competitions_week16 = Competition.where(game_week: 16)
       end
     
     def new
