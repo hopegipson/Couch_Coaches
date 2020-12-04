@@ -26,8 +26,8 @@ DATA4 = {
      ["Party Like A Gronk Star"],
      ["View From Lamar"],
      ["Little Red Fournette"],
-     ["Is It Too Late to Say Amari"],
-     ["Country Road Take Mahomes"]
+     ["Turn Down for Watt"],
+     ["Have Amari Christmas"]
    ]}
   
   

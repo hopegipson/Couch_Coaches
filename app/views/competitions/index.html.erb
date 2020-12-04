@@ -10,6 +10,10 @@
     <td>Home Team</td>
     <td>Visitor Team</td>
     <td>Winner </td>
+    <% if admin? %>
+    <td>Modify </td>
+    <% end %>
+
  
 
 
@@ -25,6 +29,8 @@
     <% winner = Team.find_by(id: competition.game.winner_id) %>
     <% if winner %>
     <th scope="col"><%= winner.name%></th>
+    <% else %>
+    <th scope="col">Not scored yet</th>
     <% end %>
     <% if admin? %>
     <th scope="col"><%= link_to "Edit Competition", edit_competition_path(competition) %> </th>

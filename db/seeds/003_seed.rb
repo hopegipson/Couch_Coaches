@@ -2,7 +2,6 @@
     :player_keys =>
     ["name", "position", "nfl_team", "projected_points", "team_id"],
     :players => [
-      ["Patrick Mahomes", "QB", "KC", 578, 1],
       ["Drew Brees", "QB", "NO", 475, 2],
       ["Tom Brady", "QB", "TB", 472, 3],
       ["Lamar Jackson", "QB", "BAL", 587, 4],

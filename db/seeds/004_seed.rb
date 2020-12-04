@@ -6,7 +6,7 @@ DATA7 = {
       [2, 9, 1, 1],
       [3, 8, 2, 1],
       [4, 7, 3, 1],
-      [5, 6, 4, 2],
+      [5, 6, 4, 1],
 
       [8, 10, 5, 2],
       [7, 2, 6, 2],
@@ -85,7 +85,8 @@ DATA7 = {
       ]}
   
       def make_games
-        64.times { Game.new }
+        64.times {
+            Game.create}
       end
 
       def make_competitions

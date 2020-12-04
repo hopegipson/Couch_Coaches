@@ -1,7 +1,14 @@
 <br>  
 <div class="jumbotron">
   <h1 class="display-3"> <%= @team.name %></h1>
-  <p class="lead">This season has already been an epic ride for <%= @team.name%> a bold team who already has <%= @team.winning_games.count%> wins and bravely fought but succumbed to <%= @team.losing_games.count%> losses at the hands of other league teams.   </p>
+  <% if !@team.players.empty? %>
+  <p class="lead"> Highlight-worthy performances by <%= @team.players[0].name%> make this team a tough one to beat.  <%= @team.name%> has <%= @team.winning_games.count%> win(s) and <%= @team.losing_games.count%> loss(es) thusfar this season.   </p>
+  <% else %>
+  <p class="lead"> If <%= @team.name%> is going to be a fantasy champion this year, this team is going to need some players...  </p>
+
+  <% end %>
+  <h1> Record: </h1>
+  <h1> <%= @team.winning_games.count%> - <%= @team.losing_games.count%></h1>
 <h1> Owner: <% @team.users.each do |user| %>
 
   <div class="card border-success mb-3" style="max-width: 20rem;">
