@@ -16,9 +16,8 @@ class ApplicationController < ActionController::Base
     def home
       current_user
       free_agent_team
-      if current_user
-        @user_teams = @current_user.teams
-      end
+      @user_teams = @current_user.teams if current_user
+
     end
 
     def admin?
@@ -29,5 +28,4 @@ class ApplicationController < ActionController::Base
     def free_agent_team
       @free_agent_team = Team.find_by(name: "Free Agent")
   end
-
 end

@@ -16,9 +16,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        if @user.admin
-            @user.teams << Team.find_by(id: 1)
-        end
+        @user.teams << Team.find_by(id: 1) if @user.admin
         if @user.save 
             session[:user_id] = @user.id
             flash[:messages ]= ["User was successfully created."]
@@ -33,7 +31,7 @@ class UsersController < ApplicationController
         if @user != @current_user
             flash[:errors ]= ["You cannot edit another user"]
             redirect_to teams_path
-          end
+        end
     end
 
     def update
@@ -51,11 +49,11 @@ class UsersController < ApplicationController
                 team.players.each do |player|
                      player.team_id = 1
                      player.save
-                end
+            end
                 team.destroy
+                end
             end
-            end
-         @user.destroy
+        @user.destroy
         session[:user_id] = nil
         flash[:messages ]= ["User successfully deleted."]
         redirect_to root_path
@@ -73,7 +71,4 @@ class UsersController < ApplicationController
     def find_user
         @user = User.find_by(id: params[:id])
     end
-
-
-
 end

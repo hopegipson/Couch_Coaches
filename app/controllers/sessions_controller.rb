@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
     def new 
         @users = User.all
     end
@@ -25,7 +24,6 @@ class SessionsController < ApplicationController
         u.username = "#{u.first_name[0]}#{u.first_name[1]}#{u.first_name[2]}#{u.last_name}"
         end
         session[:user_id] = @user.id
-
         redirect_to user_path(@user)
     end
 
@@ -36,6 +34,7 @@ class SessionsController < ApplicationController
     end
 
     private
+
     def auth
         request.env['omniauth.auth']
       end

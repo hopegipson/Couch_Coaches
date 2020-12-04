@@ -17,11 +17,11 @@ class GamesController < ApplicationController
           flash[:errors ]= ["Only an admin can score a game."]
           redirect_to game_path(@game)
         elsif teams_full?
-        @home_team = @game.home_team
-        @visitor_team = @game.visitor_team
-        @home_players = @home_team.players
-        @visitor_players = @visitor_team.players
-        @week = @game.competition.game_week
+          @home_team = @game.home_team
+          @visitor_team = @game.visitor_team
+          @home_players = @home_team.players
+          @visitor_players = @visitor_team.players
+          @week = @game.competition.game_week
         else
           flash[:errors ]= ["This game cannot be scored until both teams have played a full lineup."]
           redirect_to game_path(@game)
@@ -39,27 +39,17 @@ class GamesController < ApplicationController
 
 
 
-      private
+    private
 
-      def find_game
-        @game = Game.find_by(id: params[:id])
-       end
+    def find_game
+      @game = Game.find_by(id: params[:id])
+    end
 
-      def game_params
-          params.require(:game).permit(:team1_player1_score, :team1_player2_score, :team1_player3_score, :team1_player4_score, :team1_player5_score, :team2_player1_score, :team2_player2_score, :team2_player3_score, :team2_player4_score, :team2_player5_score)
-      end
+    def game_params
+      params.require(:game).permit(:team1_player1_score, :team1_player2_score, :team1_player3_score, :team1_player4_score, :team1_player5_score, :team2_player1_score, :team2_player2_score, :team2_player3_score, :team2_player4_score, :team2_player5_score)
+    end
 
-      def teams_full?
-       @game.home_team.players.count == 5 && @game.visitor_team.players.count == 5
-      end
-
-
-
-
-
-
-
-
-
-
+    def teams_full?
+      @game.home_team.players.count == 5 && @game.visitor_team.players.count == 5
+    end
 end
