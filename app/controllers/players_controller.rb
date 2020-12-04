@@ -61,6 +61,7 @@ class PlayersController < ApplicationController
         flash[:errors]= [message]
         redirect_to team_path(@team)
       else 
+        flash[:messages ]= ["Player added."]
         @player.update(player_params)
         redirect_to player_path(@player)
       end
@@ -69,6 +70,7 @@ class PlayersController < ApplicationController
     def release_update
       @player.team_id = 1
       @player.save
+      flash[:messages ]= ["Player released."]
       redirect_to player_path(@player)
     end
 

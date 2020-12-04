@@ -34,6 +34,7 @@ class GamesController < ApplicationController
         @game.total_score
         @game.choose_winner
         @game.save
+        flash[:messages ]= ["Game scores updated"]
         redirect_to game_path(@game)
     end
 

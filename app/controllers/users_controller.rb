@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 
     def update
         @user.update(user_params)
+        flash[:messages ]= ["User was successfully updated."]
         redirect_to user_path(@user)
     end
 

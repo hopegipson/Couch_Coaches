@@ -57,6 +57,7 @@ class TeamsController < ApplicationController
     @team.update(team_params)
   
     if @team.save
+      flash[:messages ]= ["Team successfully updated."]
       redirect_to team_path(@team)
     else
       flash[:errors]= @team.errors.full_messages
