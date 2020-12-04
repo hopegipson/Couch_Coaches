@@ -1,5 +1,7 @@
 class Player < ApplicationRecord
     belongs_to :team
+    scope :filter_by_position, -> (position1) { where(position: position1)}
+    #Player.filter_by_position("QB")
 
 
     def self.find_by_name(name)

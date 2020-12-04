@@ -7,11 +7,19 @@ class PlayersController < ApplicationController
     def index
         @players = Player.all
         @teams = Team.all
-           if !params[:team].blank?
-          @players = Player.by_team(params[:team])
+           if !params[:team].blank? && !params[:position].blank?
+          @players = Player.by_team(params[:team]).filter_by_position(params[:position])
+           elsif !params[:team].blank? 
+            @players = Player.by_team(params[:team])
+           elsif !params[:position].blank? 
+            @players = Player.filter_by_position(params[:position])
         else
           @players = Player.all
         end
+        
+        
+
+      
     end
 
     def show

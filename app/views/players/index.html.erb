@@ -6,8 +6,13 @@
 <h3>Filter players:</h3>
 <%= form_tag("/players", method: "get") do %>
   <%= select_tag "team", options_from_collection_for_select(@teams, "id", "name"), include_blank: true %>
+  <%= select_tag "position", options_for_select([ "QB", "RB", "WR", "TE", "K" ]), include_blank: true %>
+
+
   <%= submit_tag "Filter" %>
 <% end %>
+
+
 <table class="table table-hover">
 
   <thead>
