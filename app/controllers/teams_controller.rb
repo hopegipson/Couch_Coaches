@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
   before_action :find_competitions, only: [:matchup]
 
 
+
   def index
       if params[:user_id]
       @teams = User.find(params[:user_id]).teams
@@ -34,7 +35,7 @@ class TeamsController < ApplicationController
   end
       
   def create 
-    @team = Team.new(name:  team_params[:name])
+    @team = Team.new(name:  create_team_params[:name])
     @team.users << User.find_by(id: create_team_params[:user_id])
     if @team.save
       flash[:messages ]= ["Your team: #{@team.name} was successfully created."]
@@ -54,6 +55,7 @@ class TeamsController < ApplicationController
 
   def update
     @team.update(team_params)
+  
     if @team.save
       redirect_to team_path(@team)
     else
@@ -79,7 +81,7 @@ class TeamsController < ApplicationController
   end
 
   def team_params
-      params.require(:team).permit(:name)
+      params.require(:team).permit(:name, user_ids: [])
   end
 
   def create_team_params

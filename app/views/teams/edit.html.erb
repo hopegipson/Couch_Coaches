@@ -2,7 +2,23 @@
 <div class="jumbotron">
 <h1> Edit a Team </h1>
 <div class="row">
-<%= render 'form' %>
+<%= form_for (@team) do |f|%>
+    <br>
+
+  <%= f.label :name, "Team Name:" %>
+      <%= f.text_field :name %>
+      </p>
+      <%= f.label :name, "Select users to designate as team co-owners, if desired." %>
+      <p>
+  
+      <%= f.collection_check_boxes :user_ids,  User.all_except(User.filter_by_admin), :id, :username, include_hidden: false %>
+
+
+   
+
+      <%= f.submit %>
+    <% end %>
+
 </div>
 </div>
 

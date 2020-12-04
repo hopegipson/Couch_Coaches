@@ -9,6 +9,7 @@ class Team < ApplicationRecord
     has_many :losing_games, :class_name => 'Game', :foreign_key => 'loser_id'
     validates :name, presence: :true, uniqueness: :true
 
+
     def total_team_points
         total = 0
         self.players.all.each do |player|
@@ -17,6 +18,9 @@ class Team < ApplicationRecord
         total
     end
 
+    def already_a_user?(userid)
+        self.user_ids.include?(userid)
+    end
 
 
     def self.all_except(team)

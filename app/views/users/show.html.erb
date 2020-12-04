@@ -40,7 +40,7 @@
     <% @user.teams.each do |team| %>
 
     <tr>
-      <th scope="col"><%= link_to "#{team.name}", user_team_path(team)  %></th>
+      <th scope="col"><%= link_to "#{team.name}", user_team_path(@current_user, team)  %></th>
       <th scope="col"><%= team.winning_games.count %></th>
       <th scope="col"><%= team.losing_games.count %></th>
  

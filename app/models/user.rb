@@ -13,4 +13,8 @@ class User < ApplicationRecord
     def full_name
         "#{self.first_name} #{self.last_name}".titleize
     end
+
+    def self.all_except(user)
+        where.not(id: user)
+    end
 end
