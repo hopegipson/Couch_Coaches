@@ -2,6 +2,8 @@ class Player < ApplicationRecord
     belongs_to :team
     scope :filter_by_position, -> (position1) { where(position: position1)}
     validates :team_id, presence: :true
+    scope :filter_by_nfl_team, -> (nflteam) { where(nfl_team: nflteam)}
+
 
     def self.find_by_name(name)
         Player.all.find_by(name: name.titleize)

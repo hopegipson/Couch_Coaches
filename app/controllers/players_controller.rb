@@ -18,6 +18,15 @@ class PlayersController < ApplicationController
         end
     end
 
+    def filter_by_nfl_team
+      if !params[:nfl_team].blank?
+        @players = Player.filter_by_nfl_team(params[:nfl_team])
+      end
+    end
+
+    def nfl_team
+    end
+
     def show
     end
 
