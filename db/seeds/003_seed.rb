@@ -13,6 +13,7 @@
       ["Matt Ryan", "QB", "ATL", 462, 9],
       ["Ryan Tannehill", "QB", "TEN", 395, 10],
       ["Josh Allen", "QB", "BUF", 486, 1],
+      ["Deshaun Watson", "QB", "HOU", 506, 1],
       ["Dalvin Cook", "RB", "MIN", 393, 1],
       ["Nick Chubb", "RB", "CLE", 352, 2],
       ["Joe Mixon", "RB", "CIN", 376, 3],

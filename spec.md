@@ -14,8 +14,8 @@ Specs:
     (Competition has a submittable attribute of game_week)
 - [X] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     (All models with validations include: Competition, Player, Team, User)
-- [] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-
+- [X] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+    (Class level scope method to sort players by NFL Team - associated with URL: /players/filter_by_nfl_team. Other class level scope methods include getting users by admin from the database and players by position)
 - [X] Include signup (how e.g. Devise)
     (Signup through form or through OmniAuth Facebook)
 - [X] Include login (how e.g. Devise)
