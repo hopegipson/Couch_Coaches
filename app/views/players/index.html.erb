@@ -7,14 +7,11 @@
 <%= form_tag("/players", method: "get") do %>
   <%= select_tag "team", options_from_collection_for_select(@teams, "id", "name"), include_blank: true %>
   <%= select_tag "position", options_for_select([ "QB", "RB", "WR", "TE", "K" ]), include_blank: true %>
-
-
   <%= submit_tag "Filter" %>
 <% end %>
 
 
 <table class="table table-hover">
-
   <thead>
   <tbody>
     <tr class="table-active">
@@ -23,39 +20,30 @@
       <td>NFL TEAM</td>
       <td>Projected Season Points</td>
       <td>Fantasy Team</td>
+      <% if admin? == false %>
       <td>Add/Release <td>
-
-
+      <% end %>
       </tbody>
-
-
     </tr>
+
     <% @players.each do |player| %>
-
     <tr>
-
       <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
       <th scope="col"><%= player.position %></th>
       <th scope="col"><%= player.nfl_team %></th>
       <th scope="col"><%= player.projected_points %> Points</th>
       <% if player.team.name == "Free Agent" %>
       <th scope="col"><%=  "#{player.team.name}" %> </th>
+      <% if admin? == false %>
       <th scope="col"><%= link_to "Add Player", edit_player_path(player)  %> </th>
+      <% end %>
       <% else %>
       <th scope="col"><%= link_to "#{player.team.name}", team_path(player.team)  %> </th>
       <% end %>
-
       <% if admin? == false && @current_user.teams.include?(player.team)  %>
       <th scope="col"><%= link_to "Release Player",  release_path(player)  %> </th>
       <% end %>
-
-
       <% end %>
-
-
-
     </tr>
-
   </thead>
- 
 </table> 

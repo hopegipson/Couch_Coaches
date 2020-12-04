@@ -13,14 +13,11 @@
 <% if @player %>
   <div>
     <%= link_to @player.name, player_path(@player) %> was found in this league database.
-
-
   </div>
 <% end %>
 
 
 <table class="table table-hover">
-
   <thead>
   <tbody>
     <tr class="table-active">
@@ -29,16 +26,14 @@
       <td>NFL TEAM</td>
       <td>Projected Season Points</td>
       <td>Fantasy Team</td>
+      <% if admin? == false %>
       <td>Add/release <td>
-
+      <% end %>
       </tbody>
-
-
     </tr>
+
     <% @players.each do |player| %>
-
     <tr>
-
       <th scope="col"><%= link_to "#{player.name}", player_path(player)  %></th>
       <th scope="col"><%= player.position %></th>
       <th scope="col"><%= player.nfl_team %></th>
@@ -55,9 +50,6 @@
       <th scope="col"><%= link_to "Release Player",  release_path(player)  %> </th>
       <% end %>
       <% end %>
-
     </tr>
-
   </thead>
- 
 </table> 

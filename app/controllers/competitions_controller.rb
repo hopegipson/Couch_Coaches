@@ -36,7 +36,7 @@ class CompetitionsController < ApplicationController
           redirect_to game_path(game)
         else
          flash[:errors]= @competition.errors.full_messages
-          render :new
+          redirect_to new_competition_path
         end
       end
 
@@ -47,7 +47,7 @@ class CompetitionsController < ApplicationController
           redirect_to competitions_path
         else
           flash[:errors]= @competition.errors.full_messages
-          render :edit
+          redirect_to edit_competition_path(@competition)
         end
     end
 

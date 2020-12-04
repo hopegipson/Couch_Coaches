@@ -1,7 +1,4 @@
 <%= render 'partial' %>
-
-
-
 <center>
     <% if @player.team.name == "Free Agent" %>
     <%= button_to  "Add Player", edit_player_path, method: "get", class: "btn btn-outline-success"  %>

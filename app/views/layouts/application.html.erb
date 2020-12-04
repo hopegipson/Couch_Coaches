@@ -21,24 +21,17 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User</a>
       <div class="dropdown-menu">
-
       <p class="dropdown-item"><%= link_to "User Account", user_path(@current_user) %></p>
       <p class="dropdown-item"><%= link_to "All Users", users_path %></p>
-
-     
     </li>
-
-      
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Team</a>
         <div class="dropdown-menu">
-
         <p class="dropdown-item"><%= link_to "All Teams", teams_path %></p>
         <% if @current_user.admin == false %>
         <p class="dropdown-item"><%= link_to "My Teams", user_teams_path(@current_user) %></p>
@@ -54,34 +47,25 @@
         </div>
         <% end %>
       </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Players</a>
           <div class="dropdown-menu">
             <p class="dropdown-item"><%= link_to "Search for Player", search_path %></p>
-
             <p class="dropdown-item"><%= link_to "All Players", players_path %></p>
-
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Matchups</a>
           <div class="dropdown-menu">
-
             <p class="dropdown-item"><%= link_to "All Matchups", competitions_path %></p>
             <% if @user_teams %>
             <% @user_teams.all_except(@free_agent_team).each do |team| %>
             <p class="dropdown-item"><%= link_to "#{team.name} Matchups", matchup_path(team) %></p>
               <% end %>
               <% end %>
-
             <% if admin?%>
             <p class="dropdown-item"><%= link_to "Create Matchup", new_competition_path %></p>
             <% end %>
-
         </li>
-
-
         <li class="nav-item">
         <a class="nav-link">  <%= button_to  "Log Out", logout_path, method: "post", class: "btn btn-outline-success"  %>
       </a>
@@ -113,8 +97,9 @@
       </li>
 </nav>
   <% end %>
-  <% if flash[:messages] %>
 
+
+  <% if flash[:messages] %>
 <div class="alert alert-dismissible alert-info">
 <button type="button" class="close" data-dismiss="alert">&times;</button>
 <h4 class="alert-heading">Update:</h4>
@@ -124,8 +109,8 @@
     <% end %>
 </div>
 <br>
-<% if flash[:errors] %>
 
+<% if flash[:errors] %>
 <div class="alert alert-dismissible alert-danger">
 <button type="button" class="close" data-dismiss="alert">&times;</button>
 <h4 class="alert-heading">Warning:</h4>
@@ -141,10 +126,6 @@
   <div class="container"  role="main">
     <%= yield %>
   </div>
-
- 
-
-
 
 </body>
 </html>

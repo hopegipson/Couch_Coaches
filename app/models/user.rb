@@ -6,6 +6,7 @@ class User < ApplicationRecord
     validates :first_name, presence: :true
     validates :last_name, presence: :true
     validates :email, presence: :true
+    scope :filter_by_admin, -> { where(admin: true) }
 
 
 
