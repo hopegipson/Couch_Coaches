@@ -54,8 +54,13 @@ class TeamsController < ApplicationController
     end
 
     def update
-        @team.update(team_params)
+      @team.update(team_params)
+      if @team.save
         redirect_to team_path(@team)
+      else
+        flash[:errors]= @team.errors.full_messages
+        redirect_to edit_team_path(@team)
+      end 
     end
 
     def destroy

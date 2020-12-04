@@ -16,10 +16,6 @@ class PlayersController < ApplicationController
         else
           @players = Player.all
         end
-        
-        
-
-      
     end
 
     def show
@@ -42,22 +38,28 @@ class PlayersController < ApplicationController
 
     def update
         @team = Team.find_by(id: player_params[:team_id])
-        if @team.players.count >= 5
+        @position = @player.position
+        if @team == nil
+          flash[:errors ]= ["Must specify a team to add player to"]
+          redirect_to edit_player_path(@player)
+        elsif @team.players.count == 5
           flash[:errors ]= ["This team already has the maximum 5 players, release a player to add"]
-          redirect_to players_path
+          redirect_to team_path(@team)
+        elsif @team.full_roster_of_position(@position)
+          message = @team.full_roster_of_position(@position)
+          flash[:errors]= [message]
+          redirect_to team_path(@team)
         else 
           @player.update(player_params)
           redirect_to player_path(@player)
         end
-
- 
     end
 
     def release_update
         @player.team_id = 1
         @player.save
         redirect_to player_path(@player)
-  end
+    end
 
     private
 
@@ -76,6 +78,8 @@ class PlayersController < ApplicationController
     def player_free_agent?
       @player.team_id == 1
     end
+
+   
 
 
 

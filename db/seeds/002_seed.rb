@@ -36,7 +36,6 @@ DATA4 = {
     :player_keys =>
     ["name", "position", "nfl_team", "projected_points", "team_id"],
     :players => [
-      ["Dalvin Cook", "RB", "MIN", 393, 1],
       ["Patrick Mahomes", "QB", "KC", 578, 1],
       ["Drew Brees", "QB", "NO", 475, 1],
       ["Tom Brady", "QB", "TB", 472, 1],
@@ -58,11 +57,36 @@ DATA4 = {
       ["Ezekiel Elliott", "RB", "DAL", 412, 1],
       ["Austin Ekeler", "RB", "LAC", 313, 1],
       ["Kareem Hunt", "RB", "CLE", 228, 1],
-      ["Austin Ekeler", "RB", "LAC", 313, 1],
       ["Tyreek Hill", "WR", "KC", 315, 1],
       ["Chris Godwin", "WR", "TB", 298, 1],
       ["Calvin Ridley", "WR", "ATL", 248, 1],
-      ["Travis Kelce", "TE", "KC", 280, 1]
+      ["Julio Jones", "WR", "ATL", 313, 1],
+      ["Cooper Kupp", "WR", "LAR", 262, 1],
+      ["DeAndre Hopkins", "WR", "ARI", 304, 1],
+      ["DK Metcalf", "WR", "SEA", 244, 1],
+      ["Keenan Allen", "WR", "LAC", 247, 1],
+      ["Michael Thomas", "WR", "NO", 323, 1],
+      ["Tyler Lockett", "WR", "SEA", 265, 1],
+      ["Travis Kelce", "TE", "KC", 280, 1],
+      ["Darren Waller", "TE", "LV", 205, 1],
+      ["Evan Engram", "TE", "NYG", 176, 1],
+      ["Hunter Henry", "TE", "LAC", 174, 1],
+      ["Noah Fant", "TE", "DEN", 155, 1],
+      ["Mike Gesicki", "TE", "MIA", 164, 1],
+      ["Eric Ebron", "TE", "PIT", 153, 1],
+      ["Zach Ertz", "TE", "PHI", 223, 1],
+      ["Jimmy Graham", "TE", "CHI", 133, 1],
+      ["George Kittle", "TE", "SF", 265, 1],
+      ["Jason Sanders", "K", "MIA", 172, 1],
+      ["Harrison Butker", "K", "KC", 200, 1],
+      ["Younghoe Koo", "K", "ATL", 185, 1],
+      ["Chris Boswell", "K", "PIT", 177, 1],
+      ["Robbie Gould", "K", "SF", 202, 1],
+      ["Rodrigo Blankenship", "K", "IND", 170, 1],
+      ["Justin Tucker", "K", "BAL", 199, 1],
+      ["Dan Bailey", "K", "MIN", 177, 1],
+      ["Daniel Carlson", "K", "LV", 187, 1],
+      ["Jason Myers", "K", "SEA", 182, 1]
       ]}
   
   

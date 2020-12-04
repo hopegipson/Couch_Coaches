@@ -30,6 +30,7 @@ class GamesController < ApplicationController
 
       def update
         @game.update(game_params)
+        @game.scored = true
         @game.total_score
         @game.choose_winner
         @game.save
@@ -45,7 +46,7 @@ class GamesController < ApplicationController
        end
 
       def game_params
-          params.require(:game).permit(:team1_player1_score, :team1_player2_score, :team1_player3_score, :team1_player4_score, :team1_player5_score, :team2_player1_score, :team2_player2_score, :team2_player3_score, :team2_player4_score, :team2_player5_score, :scored)
+          params.require(:game).permit(:team1_player1_score, :team1_player2_score, :team1_player3_score, :team1_player4_score, :team1_player5_score, :team2_player1_score, :team2_player2_score, :team2_player3_score, :team2_player4_score, :team2_player5_score)
       end
 
       def teams_full?
