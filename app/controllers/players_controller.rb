@@ -22,14 +22,17 @@ class PlayersController < ApplicationController
     end
 
     def edit
-      if player_free_agent? == false
-        flash[:errors ]= ["You cannot add a player that is not a free agent or on your team"]
+      if player_belong_to_current_user?
+        flash[:errors ]= ["You cannot add a player that is already on your team"]
+        redirect_to players_path
+      elsif player_free_agent? == false
+        flash[:errors ]= ["You cannot add a player that is not a free agent"]
         redirect_to players_path
       end
     end
 
     def release
-     if player_belong_to_current_team? == false
+     if player_belong_to_current_user? == false
       flash[:errors ]= ["You cannot release a player that is not on your team"]
       redirect_to players_path
      end
@@ -71,7 +74,7 @@ class PlayersController < ApplicationController
         params.require(:player).permit(:team_id)
     end
 
-    def player_belong_to_current_team?
+    def player_belong_to_current_user?
       @current_user.teams.include?(@player.team)
     end
 
