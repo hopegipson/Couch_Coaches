@@ -66,6 +66,10 @@ class TeamsController < ApplicationController
   end
 
   def destroy
+    @team.players.each do |player|
+          player.team_id = 1
+          player.save
+      end
     @team.destroy
     flash[:messages ]= ["Team successfully deleted."]
     redirect_to teams_path
