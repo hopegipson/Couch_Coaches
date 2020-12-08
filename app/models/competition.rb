@@ -20,14 +20,12 @@ class Competition < ApplicationRecord
   def team_cannot_play_twice_one_week
     competitions = Competition.game_week(game_week)
     competitions.each do |c|
-     if  (c.home_team == home_team || c.visitor_team == home_team) || (c.home_team == visitor_team || c.visitor_team == visitor_team)
-       errors.add(:home_team, "is already scheduled for a matchup week #{game_week}.")
-        errors.add(:visitor_team, "is already scheduled for a matchup week #{game_week}.")
+
       if c.home_team == home_team || c.visitor_team == home_team
         errors.add(:home_team, "is already scheduled for a matchup week #{game_week}.")
       elsif c.home_team == visitor_team || c.visitor_team == visitor_team
         errors.add(:visitor_team, "is already scheduled for a matchup week #{game_week}.")
       end
-      end
     end
+  end
   end
