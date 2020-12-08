@@ -2,6 +2,7 @@ class PlayersController < ApplicationController
     before_action :find_player, only: [:show, :edit, :update, :release, :release_update]
     before_action :current_user
     before_action :free_agent_team
+    before_action :logged_in?
 
 
     def index

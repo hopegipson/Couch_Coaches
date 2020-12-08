@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
   before_action :current_user
   before_action :free_agent_team
   before_action :find_competitions, only: [:matchup]
+  before_action :logged_in?
 
 
 

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
     helper_method :admin?
     helper_method :free_agent_team
+    helper_method :logged_in?
 
     def current_user
       if session[:user_id]
@@ -12,6 +13,14 @@ class ApplicationController < ActionController::Base
         @current_user = nil
       end
     end
+
+    def logged_in?
+      if @current_user == nil
+        flash[:errors ]= ["Need to be logged in to access"]
+        redirect_to root_path
+      end
+    end
+
   
     def home
       current_user

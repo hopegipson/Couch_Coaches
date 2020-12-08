@@ -9,7 +9,10 @@ class Competition < ApplicationRecord
   validates :team2_id, presence: :true
   validates :game_week, presence: :true, numericality: { only_integer: true, greater_than: 0, less_than: 17}
   validate :home_team_cannot_be_visitor_team
-  validate :team_cannot_play_twice_one_week
+  validate :home_team_cannot_play_twice_one_week
+  validate :visitor_team_cannot_play_twice_one_week
+
+
 
   def home_team_cannot_be_visitor_team
     if home_team == visitor_team
@@ -17,15 +20,22 @@ class Competition < ApplicationRecord
     end
   end
 
-  def team_cannot_play_twice_one_week
+  def home_team_cannot_play_twice_one_week
     competitions = Competition.game_week(game_week)
     competitions.each do |c|
-
       if c.home_team == home_team || c.visitor_team == home_team
         errors.add(:home_team, "is already scheduled for a matchup week #{game_week}.")
-      elsif c.home_team == visitor_team || c.visitor_team == visitor_team
+      end
+    end
+  end
+
+  def visitor_team_cannot_play_twice_one_week
+    competitions = Competition.game_week(game_week)
+    competitions.each do |c|
+      if c.home_team == visitor_team || c.visitor_team == visitor_team
         errors.add(:visitor_team, "is already scheduled for a matchup week #{game_week}.")
       end
     end
   end
+
   end

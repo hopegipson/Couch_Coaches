@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     before_action :find_user, only: [:show, :edit, :update, :destroy]
     before_action :current_user
     before_action :free_agent_team
+    before_action :logged_in?, only: [:index, :show, :edit, :update, :destroy]
 
     def new
         @user = User.new

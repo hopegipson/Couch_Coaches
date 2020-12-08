@@ -2,6 +2,7 @@ class CompetitionsController < ApplicationController
     before_action :current_user
     before_action :free_agent_team
     before_action :find_competition, only: [:show, :edit, :update, :destroy]
+    before_action :logged_in?
 
     def index
         @competitions = Competition.all
