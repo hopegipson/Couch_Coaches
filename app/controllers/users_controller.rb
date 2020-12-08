@@ -35,9 +35,14 @@ class UsersController < ApplicationController
     end
 
     def update
+        if @user.admin == true && User.filter_by_admin.count == 1
+            flash[:errors] = ['You cannot remove the only admin, you must make another user an admin to demote this user']
+            redirect_to edit_user_path(@user)
+        else
         @user.update(user_params)
         flash[:messages ]= ["User was successfully updated."]
         redirect_to user_path(@user)
+        end
     end
 
     def destroy
