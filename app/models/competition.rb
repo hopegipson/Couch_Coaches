@@ -38,4 +38,4 @@ class Competition < ApplicationRecord
     end
   end
 
-  end
+end

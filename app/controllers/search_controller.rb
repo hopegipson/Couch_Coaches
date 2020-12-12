@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-  before_action :current_user
   before_action :free_agent_team
   before_action :logged_in?
 

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :edit, :update, :destroy]
-    before_action :current_user
     before_action :free_agent_team
     before_action :logged_in?, only: [:index, :show, :edit, :update, :destroy]
 
@@ -9,6 +8,16 @@ class UsersController < ApplicationController
     end
 
     def index
+      if params[:user_name]
+        @users = User.find_by(username: params[:user_name])
+      elsif params[:first_name]
+        @users = User.find_by(first_name: params[:first_name])
+      elsif params[:last_name]
+        @users = User.find_by(last_name: params[:last_name])
+
+
+      end
+
         @users = User.all
     end
 
@@ -18,7 +27,8 @@ class UsersController < ApplicationController
     def create
         @user = User.create(user_params)
         @user.teams << Team.find_by(id: 1) if @user.admin
-        if @user.save 
+
+        if @user.valid? 
             session[:user_id] = @user.id
             flash[:messages ]= ["User was successfully created."]
             redirect_to user_path(@user)

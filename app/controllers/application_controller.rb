@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
+      current_user
       if @current_user == nil
         flash[:errors ]= ["Need to be logged in to access"]
         redirect_to root_path
