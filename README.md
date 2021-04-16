@@ -1,7 +1,7 @@
 
 # FantasyFootball
 
-This Rails Application allows for the creation of a fantasy football league. Users can create teams, add NFL players to their teams, search for and create NFL players, create matchups, and have those matchups scored. NFL player information is from the API: https://sportsdata.io/.
+This Rails Application allows for the creation of a fantasy football league. Users can create teams, add NFL players to their teams, search for and create NFL players, create matchups, and have those matchups scored. NFL player information is from this <a href="https://sportsdata.io/"/> API.</a>
 
 
 To watch a demo of the Rails Application in action you can visit:
@@ -37,7 +37,7 @@ Note about seeding: 001_seed is the only seed required for the usage of this app
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/hopegipson/fantasy_football"/> here.</a> This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/fantasy_football/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub <a href="https://github.com/hopegipson/fantasy_football"/> here.</a> This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/fantasy_football/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
