@@ -4,7 +4,14 @@
 This Rails Application allows for the creation of a fantasy football league. Users can create teams, add NFL players to their teams, search for and create NFL players, create matchups, and have those matchups scored. NFL player information is from the API: https://sportsdata.io/.
 
 
-To watch a demo of the Rails Application in action you can visit: https://www.youtube.com/watch?v=kATPGwmSVCg
+To watch a demo of the Rails Application in action you can visit:
+
+<a href="https://www.youtube.com/watch?v=kATPGwmSVCg
+" target="_blank"><img src="http://img.youtube.com/vi/kATPGwmSVCg/0.jpg" 
+alt="Demo of Spotify app" width="240" height="180" border="10" /></a>
+
+Blog Post with Further Explanation on the Project's Ability to Retrieve Current Player Data:
+<a href="https://hopegipson.github.io/fantasy_football_and_rails"/> Here</a>
 
 ## Installation
 
@@ -13,7 +20,7 @@ Add this line to your application's Gemfile:
     $ git clone https://github.com/hopegipson/fantasy_football.git
     $ bundle install
 
-User will also need to an API_KEY from https://sportsdata.io/. Save this API key in your .env file as API_KEY. Omniauth integration is also reliant on the environmental variables FACEBOOK_KEY, FACEBOOK_SECRET. Dotenv gem is installed for environmental variable management.
+User will also need to an API_KEY from <a href="https://sportsdata.io/"/> here.</a> Save this API key in your .env file as API_KEY. Omniauth integration is also reliant on the environmental variables FACEBOOK_KEY, FACEBOOK_SECRET. Dotenv gem is installed for environmental variable management.
 
 ## Usage
 
@@ -30,7 +37,7 @@ Note about seeding: 001_seed is the only seed required for the usage of this app
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/<hopegipson>fantasy_football. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/fantasy_football/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/hopegipson/fantasy_football"/> here.</a> This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/fantasy_football/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
