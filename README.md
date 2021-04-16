@@ -7,7 +7,7 @@ This Rails Application allows for the creation of a fantasy football league. Use
 To watch a demo of the Rails Application in action you can visit:
 
 <a href="https://www.youtube.com/watch?v=kATPGwmSVCg
-" target="_blank"><img src="http://img.youtube.com/vi/kATPGwmSVCg/20.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/kATPGwmSVCg/0.jpg" 
 alt="Demo of Spotify app" width="240" height="180" border="10" /></a>
 
 Blog Post with Further Explanation on the Project's Ability to Retrieve Current Player Data:
