@@ -3,6 +3,8 @@
 # Couch Coaches
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hopegipson/Couch_Coaches) 
+![GitHub language count](https://img.shields.io/github/languages/count/hopegipson/Couch_Coaches) 
+![GitHub top language](https://img.shields.io/github/languages/top/hopegipson/Couch_Coaches)
 ![GitHub contributors](https://img.shields.io/github/contributors/hopegipson/Couch_Coaches)
 ![GitHub issues](https://img.shields.io/github/issues-raw/hopegipson/Couch_Coaches)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hopegipson/Couch_Coaches)
