@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/oy2wPDf.png" width="100%" /> </img>
 
-# FantasyFootball
+# Couch Coaches
 
 This Rails Application allows for the creation of a fantasy football league. Users can create teams, add NFL players to their teams, search for and create NFL players, create matchups, and have those matchups scored. NFL player information is from this <a href="https://sportsdata.io/"/> API.</a>
 
@@ -18,7 +18,7 @@ Blog Post with Further Explanation on the Project's Ability to Retrieve Current 
 
 Add this line to your application's Gemfile:
 
-    $ git clone https://github.com/hopegipson/fantasy_football.git
+    $ git clone https://github.com/hopegipson/Couch_Coaches.git
     $ bundle install
 
 User will also need to an API_KEY from <a href="https://sportsdata.io/"/> here.</a> Save this API key in your .env file as API_KEY. Omniauth integration is also reliant on the environmental variables FACEBOOK_KEY, FACEBOOK_SECRET. Dotenv gem is installed for environmental variable management.
@@ -38,7 +38,7 @@ Note about seeding: 001_seed is the only seed required for the usage of this app
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub <a href="https://github.com/hopegipson/fantasy_football"/> here.</a> This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/fantasy_football/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub <a href="https://github.com/hopegipson/Couch_Coaches"/> here.</a> This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/Couch_Coaches/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -47,4 +47,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Fantasy Football project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hopegipson/fantasy_football/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Fantasy Football project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hopegipson/Couch_Coaches/blob/master/CODE_OF_CONDUCT.md).
