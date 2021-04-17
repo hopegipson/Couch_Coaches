@@ -3,8 +3,6 @@
 # Couch Coaches
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hopegipson/Couch_Coaches) 
-![GitHub language count](https://img.shields.io/github/languages/count/hopegipson/Couch_Coaches) 
-![GitHub top language](https://img.shields.io/github/languages/top/hopegipson/Couch_Coaches)
 ![GitHub contributors](https://img.shields.io/github/contributors/hopegipson/Couch_Coaches)
 ![GitHub issues](https://img.shields.io/github/issues-raw/hopegipson/Couch_Coaches)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hopegipson/Couch_Coaches)
@@ -52,6 +50,12 @@ Note about seeding: 001_seed is the only seed required for the usage of this app
 
 Bug reports and pull requests are welcome on GitHub <a href="https://github.com/hopegipson/Couch_Coaches"/> here.</a> This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/Couch_Coaches/blob/master/CODE_OF_CONDUCT.md).
 
+    -Fork this repository.
+    -Create a branch: git checkout -b <branch_name>.
+    -Make your changes and commit them: git commit -m '<commit_message>'
+    -Push to the original branch: git push origin Spotify_Clone/master
+    -Create the pull request.
+
 
 ## License
 
@@ -60,3 +64,9 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Fantasy Football project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hopegipson/Couch_Coaches/blob/master/CODE_OF_CONDUCT.md).
+
+
+## Languages Used
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=hopegipson&layout=compact&theme=radical)](https://github.com/hopegipson/Couch_Coaches)
+
