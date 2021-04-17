@@ -8,7 +8,7 @@ To watch a demo of the Rails Application in action you can visit:
 
 <a href="https://www.youtube.com/watch?v=kATPGwmSVCg
 " target="_blank"><img src="http://img.youtube.com/vi/kATPGwmSVCg/0.jpg" 
-alt="Demo of Spotify app" width="240" height="180" border="10" /></a>
+alt="Demo of fantasy football app" width="240" height="180" border="10" /></a>
 
 Blog Post with Further Explanation on the Project's Ability to Retrieve Current Player Data:
 <a href="https://hopegipson.github.io/fantasy_football_and_rails"/> Here</a>
