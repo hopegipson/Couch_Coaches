@@ -2,6 +2,16 @@
 
 # Couch Coaches
 
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hopegipson/Couch_Coaches) 
+![GitHub language count](https://img.shields.io/github/languages/count/hopegipson/Couch_Coaches) 
+![GitHub top language](https://img.shields.io/github/languages/top/hopegipson/Couch_Coaches)
+![GitHub contributors](https://img.shields.io/github/contributors/hopegipson/Couch_Coaches)
+![GitHub issues](https://img.shields.io/github/issues-raw/hopegipson/Couch_Coaches)
+![GitHub last commit](https://img.shields.io/github/last-commit/hopegipson/Couch_Coaches)
+![GitHub forks](https://img.shields.io/github/forks/hopegipson/Couch_Coaches?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/hopegipson/Couch_Coaches?style=social) 
+![YouTube Video Views](https://img.shields.io/youtube/views/voVIl0MNwWI?style=social)
+
 This Rails Application allows for the creation of a fantasy football league. Users can create teams, add NFL players to their teams, search for and create NFL players, create matchups, and have those matchups scored. NFL player information is from this <a href="https://sportsdata.io/"/> API.</a>
 
 
