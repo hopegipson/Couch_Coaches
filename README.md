@@ -24,7 +24,7 @@ To watch a demo of the Rails Application in action you can visit:
 alt="Demo of fantasy football app" width="240" height="180" border="10" /></a>
 
 Blog Post with Further Explanation on the Project's Ability to Retrieve Current Player Data:
-<a href="https://hopegipson.github.io/fantasy_football_and_rails"/> Here</a>
+<a href="https://thehopegipson.medium.com/fantasy-football-and-rails-importing-player-information-6a8148df0b82"/> Here</a>
 
 ## Installation
 
